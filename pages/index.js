@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import { MdOutlineCloudDownload } from "react-icons/md";
+import { FiArrowDownCircle } from "react-icons/fi";
 
 import * as SC from '../styles/mainStyle'
 
@@ -31,7 +32,10 @@ export default function Home() {
             <SC.TitleMain>Front-end Developer	&amp; UI Designer</SC.TitleMain>
             <SC.TitleMainStroke>Front-end Developer &amp; UI Designer</SC.TitleMainStroke>
             <SC.Description>Front-end developer focused on creating Web and Mobile applications. I really like different projects that solve real problems.</SC.Description>
-
+            <SC.ContainerButtonsMain>
+              <SC.ButtonCV><MdOutlineCloudDownload color="white" size="1.8em"/>Download CV</SC.ButtonCV>
+              <SC.ButtonPortfolio><FiArrowDownCircle color="var(--bg-primary)" size="1.5em"/>Portfolio</SC.ButtonPortfolio>
+            </SC.ContainerButtonsMain>
           </SC.ContentLeft>
           <SC.RotateBG/>
         </SC.ContainerLeft>
