@@ -45,7 +45,7 @@ a{
 }
 
 body::-webkit-scrollbar {
-  width: 12px;             /* width of the entire scrollbar */
+  display: none;        /* width of the entire scrollbar */
 }
 
 @media only screen and (max-width: 992px) {
