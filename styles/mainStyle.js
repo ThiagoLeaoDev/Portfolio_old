@@ -97,14 +97,14 @@ export const ContainerLeft = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: space-around;
+  justify-content: center;
   background-color: var(--bg-primary);
 `;
 
 export const RotateBG = styled.span`
   z-index: 1;
   position: absolute;
-  right: -270px;
+  right: -240px;
   width: 100%;
   height: 200vh;
   display: flex;
@@ -119,8 +119,11 @@ export const ContentLeft = styled.div`
   z-index: 2;
   max-width: 590px;
   width: 80%;
+  padding-top: 240px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 `;
 
 export const Name = styled.h2`
@@ -166,6 +169,7 @@ export const ContainerButtonsMain = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 120px;
 `;
 
 export const ButtonCV = styled.button`
@@ -197,23 +201,51 @@ export const ButtonPortfolio = styled(ButtonCV)`
   border-radius: 10px;
   background-color: var(--primary);
   color: var(--bg-primary);
-    padding: 12px 38px;
+  padding: 12px 38px;
+`;
+
+export const ContainerSocial = styled.div`
+  z-index: 2;
+  bottom: 100px;
+  max-width: 590px;
+  width: 55%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const CircleSocial = styled.a  `
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--bg-button);
+  padding: 16px;
+  border-radius: 50%;
+  opacity: .5;
+  transition: 0.3s ease;
+
+  &:hover{
+    cursor: pointer;
+    opacity: 1;
+  }
 `;
 
 export const ContainerRight = styled.div`
   width: 60%;
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: flex-end;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
 `;
 
 export const ContainerImage = styled.div`
   position: relative;
   width: 440px;
   height: 80vh;
-  margin-left: 146px;
+  margin-left: 126px;
 `;
 
 export const MainImage = styled(Image)`
@@ -228,4 +260,71 @@ export const Circle = styled.div`
   border: 6px solid var(--primary);
   border-radius: 50%;
   box-shadow: 0px 0px 50px 9px rgba(19,255,0,0.7), rgba(19,255,0,0.7) 0px 0px 50px 9px inset;
+`;
+
+export const ContainerNavigationRight = styled.div`
+  z-index: 100;
+  position: absolute;
+  height: 100vh;
+  width: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  padding: 30px;
+`;
+
+export const CircleNav = styled.a`
+  z-index: 100;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 3px solid var(--base);
+  margin: 6px 0;
+  transition: 0.3s ease;
+
+  &:hover{
+    cursor: pointer;
+    background-color: #13FF00;
+    box-shadow: 0px 0px 10px 5px rgba(19,255,0,0.2);
+    border: 3px solid var(--primary);
+  }
+`;
+
+// ----------------------- BIO -----------------------
+
+export const SectionBio = styled.div`
+  z-index: 2;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+`;
+
+// ----------------------- PORTFOLIO -----------------------
+
+export const SectionPortfolio = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+`;
+
+// ----------------------- CONTACT -----------------------
+
+export const SectionContact = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
 `;
