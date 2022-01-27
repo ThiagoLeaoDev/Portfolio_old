@@ -15,23 +15,23 @@ export default function Home() {
     <SC.Main>
     <SC.ContainerMenu>
       <SC.Menu>
-        <SC.MenuOption><SC.MenuLink>Home</SC.MenuLink></SC.MenuOption>
-        <SC.MenuOption><SC.MenuLink>Bio</SC.MenuLink></SC.MenuOption>
-        <SC.MenuOption><SC.MenuLink>Portfolio</SC.MenuLink></SC.MenuOption>
-        <SC.MenuOption><SC.MenuLink>Contact</SC.MenuLink></SC.MenuOption>
+        <SC.MenuOption><SC.MenuLink to="home" spy={true} smooth={true}>Home</SC.MenuLink></SC.MenuOption>
+        <SC.MenuOption><SC.MenuLink to="bio" spy={true} smooth={true}>Bio</SC.MenuLink></SC.MenuOption>
+        <SC.MenuOption><SC.MenuLink to="portfolio" spy={true} smooth={true}>Portfolio</SC.MenuLink></SC.MenuOption>
+        <SC.MenuOption><SC.MenuLink to="contact" spy={true} smooth={true}>Contact</SC.MenuLink></SC.MenuOption>
       </SC.Menu>
     </SC.ContainerMenu>
     <SC.ContainerNavigationRight>
-      <SC.CircleNav />
-      <SC.CircleNav/>
-      <SC.CircleNav/>
-      <SC.CircleNav/>
+      <SC.CircleNav to="home" spy={true} smooth={true}/>
+      <SC.CircleNav to="bio" spy={true} smooth={true}/>
+      <SC.CircleNav to="portfolio" spy={true} smooth={true}/>
+      <SC.CircleNav to="contact" spy={true} smooth={true}/>
     </SC.ContainerNavigationRight>
     <SC.ContainerMainBG>
       <SC.LeftBG></SC.LeftBG>
       <SC.RightBG></SC.RightBG>
     </SC.ContainerMainBG>
-      <SC.SectionHero>
+      <SC.SectionHero id="home">
         <SC.ContainerLeft>
           <SC.ContentLeft>
             <SC.Name>THIAGO LEÃO</SC.Name>
@@ -67,9 +67,9 @@ export default function Home() {
           </SC.ContainerImage>
         </SC.ContainerRight>
       </SC.SectionHero>
-      <SC.SectionBio></SC.SectionBio>
-      <SC.SectionPortfolio></SC.SectionPortfolio>
-      <SC.SectionContact></SC.SectionContact>
+      <SC.SectionBio id="bio"></SC.SectionBio>
+      <SC.SectionPortfolio id="portfolio"></SC.SectionPortfolio>
+      <SC.SectionContact id="contact"></SC.SectionContact>
     </SC.Main>
   )
 }

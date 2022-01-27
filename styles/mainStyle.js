@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import Image from 'next/image'
+import {Link} from "react-scroll";
 
 export const Main = styled.div`
   position: relative;
@@ -43,7 +44,8 @@ export const SectionHero = styled.div`
 `;
 
 export const ContainerMenu = styled.div`
-  position: absolute;
+  z-index: 100;
+  position: fixed;
   width: 100%;
   height: 100px;
   display: flex;
@@ -65,7 +67,7 @@ export const Menu = styled.ul`
 export const MenuOption = styled.li`
 `;
 
-export const MenuLink = styled.a`
+export const MenuLink = styled(Link)`
   color: var(--text-primary);
   font-size: 18px;
   font-weight: 600;
@@ -264,7 +266,7 @@ export const Circle = styled.div`
 
 export const ContainerNavigationRight = styled.div`
   z-index: 100;
-  position: absolute;
+  position: fixed;
   height: 100vh;
   width: 15px;
   display: flex;
@@ -275,7 +277,7 @@ export const ContainerNavigationRight = styled.div`
   padding: 30px;
 `;
 
-export const CircleNav = styled.a`
+export const CircleNav = styled(Link)`
   z-index: 100;
   width: 8px;
   height: 8px;
