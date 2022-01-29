@@ -1,6 +1,7 @@
 import { MdOutlineCloudDownload } from "react-icons/md";
 import { FiArrowDownCircle } from "react-icons/fi";
 import { FaInstagram, FaGithub, FaDribbble, FaBehance } from "react-icons/fa";
+import { BiCodeBlock, BiLayout, BiMobile, BiRocket } from "react-icons/bi";
 
 import * as SC from '../styles/mainStyle'
 
@@ -16,14 +17,14 @@ export default function Home() {
     <SC.ContainerMenu>
       <SC.Menu>
         <SC.MenuOption><SC.MenuLink to="home" spy={true} smooth={true}>Home</SC.MenuLink></SC.MenuOption>
-        <SC.MenuOption><SC.MenuLink to="bio" spy={true} smooth={true}>Bio</SC.MenuLink></SC.MenuOption>
+        <SC.MenuOption><SC.MenuLink to="about" spy={true} smooth={true}>Bio</SC.MenuLink></SC.MenuOption>
         <SC.MenuOption><SC.MenuLink to="portfolio" spy={true} smooth={true}>Portfolio</SC.MenuLink></SC.MenuOption>
         <SC.MenuOption><SC.MenuLink to="contact" spy={true} smooth={true}>Contact</SC.MenuLink></SC.MenuOption>
       </SC.Menu>
     </SC.ContainerMenu>
     <SC.ContainerNavigationRight>
       <SC.CircleNav to="home" spy={true} smooth={true}/>
-      <SC.CircleNav to="bio" spy={true} smooth={true}/>
+      <SC.CircleNav to="about" spy={true} smooth={true}/>
       <SC.CircleNav to="portfolio" spy={true} smooth={true}/>
       <SC.CircleNav to="contact" spy={true} smooth={true}/>
     </SC.ContainerNavigationRight>
@@ -67,7 +68,41 @@ export default function Home() {
           </SC.ContainerImage>
         </SC.ContainerRight>
       </SC.SectionHero>
-      <SC.SectionBio id="bio"></SC.SectionBio>
+
+      <SC.SectionAbout id="about">
+        <SC.Content>
+          <SC.TitleAbout>ABOUT ME</SC.TitleAbout>
+          <SC.ContainerDescAbout>
+            <SC.TextDescAbout>I'm <SC.GreenText>Thiago Leão</SC.GreenText>, I'm <SC.GreenText>20</SC.GreenText> years old and I live in <SC.GreenText>São Vicente-SP</SC.GreenText>.<SC.GreenText> Front-end developer</SC.GreenText> and <SC.GreenText>UI Designer</SC.GreenText>, I'm passionate about interfaces, from their creation to development. I like to learn more and more about the area, challenges that take me out of my comfort zone are the best.</SC.TextDescAbout>
+            <SC.Jump/>
+            <SC.TextDescAbout>I have prototyped and developed <SC.GreenText>Landing Pages</SC.GreenText>, <SC.GreenText>Sites</SC.GreenText>, <SC.GreenText>E-commerces</SC.GreenText>, <SC.GreenText>E-mails Marketing</SC.GreenText>, <SC.GreenText>Apps</SC.GreenText> and <SC.GreenText>Programs</SC.GreenText>.</SC.TextDescAbout>
+          </SC.ContainerDescAbout>
+        </SC.Content>
+          <SC.TireServices>
+            <SC.Content>
+              <SC.TitleServices>My Services</SC.TitleServices>
+              <SC.ContainerServices>
+                <SC.BoxIconTextServices>
+                  <BiCodeBlock color="white" size="1.8em"/>
+                  <SC.TextServices>Web Development</SC.TextServices>
+                </SC.BoxIconTextServices>
+                <SC.BoxIconTextServices>
+                  <BiCodeBlock color="white" size="1.8em"/>
+                  <SC.TextServices>UI Design</SC.TextServices>
+                </SC.BoxIconTextServices>
+                <SC.BoxIconTextServices>
+                  <BiCodeBlock color="white" size="1.8em"/>
+                  <SC.TextServices>Mobile Development</SC.TextServices>
+                </SC.BoxIconTextServices>
+                <SC.BoxIconTextServices>
+                  <BiCodeBlock color="white" size="1.8em"/>
+                  <SC.TextServices>Social Media Design</SC.TextServices>
+                </SC.BoxIconTextServices>
+              </SC.ContainerServices>
+            </SC.Content>
+          </SC.TireServices>
+      </SC.SectionAbout>
+
       <SC.SectionPortfolio id="portfolio"></SC.SectionPortfolio>
       <SC.SectionContact id="contact"></SC.SectionContact>
     </SC.Main>

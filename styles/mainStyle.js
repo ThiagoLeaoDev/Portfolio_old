@@ -294,17 +294,106 @@ export const CircleNav = styled(Link)`
   }
 `;
 
-// ----------------------- BIO -----------------------
+// ----------------------- ABOUT ME -----------------------
 
-export const SectionBio = styled.div`
+export const SectionAbout = styled.div`
   z-index: 2;
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-tertiary);
+`;
+
+export const Content = styled.div`
+  width: 1920px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const TitleAbout = styled.h2`
+  margin-top: 146px;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 52px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  &::after{
+  content: '';
+  border-bottom: 4px solid var(--primary);
+  width: 45px;
+  border-radius: 30px;
+  display: block;
+  position: relative;
+  margin-top: 5px;
+}
+`;
+
+export const ContainerDescAbout = styled.div`
+  width: 84%;
+  max-width: 500px;
+  margin-bottom: 100px;
+`;
+
+export const TextDescAbout = styled.p`
+  color: var(--text-secondary);
+  text-align: center;
+`;
+
+export const GreenText = styled.b`
+  color: var(--primary);
+`;
+
+export const Jump = styled.br`
+`;
+
+export const TireServices = styled.div`
+  width: 100%;
+  background-color: #1D1D1D;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--bg-secondary);
+  padding: 76px 0;
+`;
+
+export const TitleServices = styled.h4`
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 52px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const ContainerServices = styled.div`
+  width: 70%;
+  background-color: #1D1D1D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 76px 40px;
+`;
+
+export const BoxIconTextServices = styled.div`
+  width: 500px;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 76px 0;
+`;
+
+export const TextServices = styled.p`
+  color: var(--text-primary);
 `;
 
 // ----------------------- PORTFOLIO -----------------------
@@ -316,7 +405,7 @@ export const SectionPortfolio = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background: var(--bg-primary);
+  background-color: var(--bg-primary);
 `;
 
 // ----------------------- CONTACT -----------------------
@@ -328,5 +417,5 @@ export const SectionContact = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background: var(--bg-secondary);
+  background-color: var(--bg-secondary);
 `;
