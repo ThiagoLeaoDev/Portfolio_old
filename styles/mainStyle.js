@@ -307,7 +307,8 @@ export const SectionAbout = styled.div`
 `;
 
 export const Content = styled.div`
-  width: 1920px;
+  width: 100%;
+  max-width: 1920px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -373,27 +374,28 @@ export const TitleServices = styled.h4`
 `;
 
 export const ContainerServices = styled.div`
-  width: 70%;
-  background-color: #1D1D1D;
+  width: 60%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 76px 40px;
 `;
 
 export const BoxIconTextServices = styled.div`
-  width: 500px;
-  background-color: red;
+  width: 250px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  padding: 76px 0;
+  justify-content: left;
+  padding: 40px 0;
+  margin: 0 100px;
 `;
 
 export const TextServices = styled.p`
   color: var(--text-primary);
+  margin-left: 8px;
+  font-size: 20px;
+  font-weight: 500;
 `;
 
 // ----------------------- PORTFOLIO -----------------------

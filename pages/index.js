@@ -83,19 +83,19 @@ export default function Home() {
               <SC.TitleServices>My Services</SC.TitleServices>
               <SC.ContainerServices>
                 <SC.BoxIconTextServices>
-                  <BiCodeBlock color="white" size="1.8em"/>
+                  <BiCodeBlock color="var(--primary)" size="1.8em"/>
                   <SC.TextServices>Web Development</SC.TextServices>
                 </SC.BoxIconTextServices>
                 <SC.BoxIconTextServices>
-                  <BiCodeBlock color="white" size="1.8em"/>
+                  <BiLayout color="var(--primary)" size="1.8em"/>
                   <SC.TextServices>UI Design</SC.TextServices>
                 </SC.BoxIconTextServices>
                 <SC.BoxIconTextServices>
-                  <BiCodeBlock color="white" size="1.8em"/>
+                  <BiMobile color="var(--primary)" size="1.8em"/>
                   <SC.TextServices>Mobile Development</SC.TextServices>
                 </SC.BoxIconTextServices>
                 <SC.BoxIconTextServices>
-                  <BiCodeBlock color="white" size="1.8em"/>
+                  <BiRocket color="var(--primary)" size="1.8em"/>
                   <SC.TextServices>Social Media Design</SC.TextServices>
                 </SC.BoxIconTextServices>
               </SC.ContainerServices>
