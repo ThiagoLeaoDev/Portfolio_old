@@ -299,7 +299,6 @@ export const CircleNav = styled(Link)`
 export const SectionAbout = styled.div`
   z-index: 2;
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -341,9 +340,13 @@ export const ContainerDescAbout = styled.div`
   margin-bottom: 100px;
 `;
 
+export const SquareComponent = styled(Image)`
+`;
+
 export const TextDescAbout = styled.p`
   color: var(--text-secondary);
   text-align: center;
+  font-weight: 500;
 `;
 
 export const GreenText = styled.b`
@@ -354,6 +357,7 @@ export const Jump = styled.br`
 `;
 
 export const TireServices = styled.div`
+  position: relative;
   width: 100%;
   background-color: #1D1D1D;
   display: flex;
@@ -363,7 +367,15 @@ export const TireServices = styled.div`
   padding: 76px 0;
 `;
 
-export const TitleServices = styled.h4`
+export const ContainerComponentAbout = styled.div`
+  position: absolute;
+  top: ${(props) => props.top};
+  right: ${(props) => props.right};
+  left: ${(props) => props.left};
+  bottom: ${(props) => props.bottom};
+`;
+
+export const TitleServices = styled.h3`
   color: var(--text-primary);
   font-weight: 600;
   margin-bottom: 52px;
@@ -397,6 +409,58 @@ export const TextServices = styled.p`
   font-size: 20px;
   font-weight: 500;
 `;
+
+export const ContainerEducationJobs = styled(Content)`
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  padding: 86px 0;
+`;
+
+export const ContainerColumnsEducationJobs = styled.div`
+  width: 84%;
+  max-width: 700px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+export const TitleColumnEducationJobs = styled.h3`
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: left;
+`;
+
+export const ColumnEducationJobs = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+`;
+
+export const BoxInfoEducationJobs = styled.div`
+  margin: 30px 0;
+`;
+
+export const DateEducationJobs = styled.p`
+  color: var(--text-primary);
+  font-weight: 500;
+`;
+
+export const TitleEducationJobs = styled.p`
+  color: var(--primary);
+  font-weight: 500;
+  font-size: 22px;
+  margin: 6px 0;
+`;
+
+export const InstitutionEducationJobs = styled.p`
+  color: #C1C1C1;
+  font-weight: 500;
+`;
+
 
 // ----------------------- PORTFOLIO -----------------------
 

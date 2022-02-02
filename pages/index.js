@@ -5,6 +5,8 @@ import { BiCodeBlock, BiLayout, BiMobile, BiRocket } from "react-icons/bi";
 
 import * as SC from '../styles/mainStyle'
 
+import AboutMeText from '../components/AboutMeText';
+
 // const Title = styled.h1`
 //   font-size: 50px;
 //   color: ${({ theme }) => theme.colors.primary};
@@ -71,14 +73,20 @@ export default function Home() {
 
       <SC.SectionAbout id="about">
         <SC.Content>
+          <SC.ContainerComponentAbout right="-440px">
+            <AboutMeText/>
+          </SC.ContainerComponentAbout>
           <SC.TitleAbout>ABOUT ME</SC.TitleAbout>
           <SC.ContainerDescAbout>
             <SC.TextDescAbout>I'm <SC.GreenText>Thiago Leão</SC.GreenText>, I'm <SC.GreenText>20</SC.GreenText> years old and I live in <SC.GreenText>São Vicente-SP</SC.GreenText>.<SC.GreenText> Front-end developer</SC.GreenText> and <SC.GreenText>UI Designer</SC.GreenText>, I'm passionate about interfaces, from their creation to development. I like to learn more and more about the area, challenges that take me out of my comfort zone are the best.</SC.TextDescAbout>
             <SC.Jump/>
-            <SC.TextDescAbout>I have prototyped and developed <SC.GreenText>Landing Pages</SC.GreenText>, <SC.GreenText>Sites</SC.GreenText>, <SC.GreenText>E-commerces</SC.GreenText>, <SC.GreenText>E-mails Marketing</SC.GreenText>, <SC.GreenText>Apps</SC.GreenText> and <SC.GreenText>Programs</SC.GreenText>.</SC.TextDescAbout>
+            <SC.TextDescAbout>I have prototyped and developed   <SC.GreenText>Landing Pages</SC.GreenText>, <SC.GreenText>Sites</SC.GreenText>, <SC.GreenText>E-commerces</SC.GreenText>, <SC.GreenText>E-mails Marketing</SC.GreenText>, <SC.GreenText>Apps</SC.GreenText> and <SC.GreenText>Programs</SC.GreenText>.</SC.TextDescAbout>
           </SC.ContainerDescAbout>
         </SC.Content>
           <SC.TireServices>
+            <SC.ContainerComponentAbout left="-20px" top="-150px">
+              <SC.SquareComponent src="/square_dots.svg" width={186} height={186} quality={100}/>
+            </SC.ContainerComponentAbout>
             <SC.Content>
               <SC.TitleServices>My Services</SC.TitleServices>
               <SC.ContainerServices>
@@ -101,6 +109,41 @@ export default function Home() {
               </SC.ContainerServices>
             </SC.Content>
           </SC.TireServices>
+        <SC.ContainerEducationJobs>
+          <SC.ContainerColumnsEducationJobs>
+            <SC.ColumnEducationJobs>
+              <SC.TitleColumnEducationJobs>Education</SC.TitleColumnEducationJobs>
+              <SC.BoxInfoEducationJobs>
+                <SC.DateEducationJobs>January 2020 - December 2023</SC.DateEducationJobs>
+                <SC.TitleEducationJobs>Sistemas de informação</SC.TitleEducationJobs>
+                <SC.InstitutionEducationJobs>Universidade Santa Cecília</SC.InstitutionEducationJobs>
+              </SC.BoxInfoEducationJobs>
+              <SC.BoxInfoEducationJobs>
+                <SC.DateEducationJobs>August 2018 - December 2019</SC.DateEducationJobs>
+                <SC.TitleEducationJobs>Sistemas de informação</SC.TitleEducationJobs>
+                <SC.InstitutionEducationJobs>Universidade Santa Cecília</SC.InstitutionEducationJobs>
+              </SC.BoxInfoEducationJobs>
+            </SC.ColumnEducationJobs>
+
+            <SC.ColumnEducationJobs>
+              <SC.TitleColumnEducationJobs>Jobs</SC.TitleColumnEducationJobs>
+              <SC.BoxInfoEducationJobs>
+                <SC.DateEducationJobs>January 2020 - December 2023</SC.DateEducationJobs>
+                <SC.TitleEducationJobs>Sistemas de informação</SC.TitleEducationJobs>
+                <SC.InstitutionEducationJobs>Universidade Santa Cecília</SC.InstitutionEducationJobs>
+              </SC.BoxInfoEducationJobs>
+
+            <SC.BoxInfoEducationJobs>
+              <SC.DateEducationJobs>January 2020 - December 2023</SC.DateEducationJobs>
+              <SC.TitleEducationJobs>Sistemas de informação</SC.TitleEducationJobs>
+              <SC.InstitutionEducationJobs>Universidade Santa Cecília</SC.InstitutionEducationJobs>
+            </SC.BoxInfoEducationJobs>
+          </SC.ColumnEducationJobs>
+          </SC.ContainerColumnsEducationJobs>
+          <SC.ContainerComponentAbout left="-600px" bottom="0px">
+            <AboutMeText/>
+          </SC.ContainerComponentAbout>
+        </SC.ContainerEducationJobs>
       </SC.SectionAbout>
 
       <SC.SectionPortfolio id="portfolio"></SC.SectionPortfolio>
