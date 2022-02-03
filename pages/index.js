@@ -108,6 +108,9 @@ export default function Home() {
                 </SC.BoxIconTextServices>
               </SC.ContainerServices>
             </SC.Content>
+            <SC.ContainerComponentAbout right="40px" bottom="-170px">
+              <SC.SquareComponent src="/square_dots.svg" width={186} height={186} quality={100}/>
+            </SC.ContainerComponentAbout>
           </SC.TireServices>
         <SC.ContainerEducationJobs>
           <SC.ContainerColumnsEducationJobs>

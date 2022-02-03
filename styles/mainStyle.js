@@ -368,6 +368,7 @@ export const TireServices = styled.div`
 `;
 
 export const ContainerComponentAbout = styled.div`
+  z-index: -1;
   position: absolute;
   top: ${(props) => props.top};
   right: ${(props) => props.right};
