@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Portfolio Website UI",
+    "type": "ui",
+    "image": "/project_image.png"
+  },
+  {
+    "title": "Marketplace",
+    "type": "code",
+    "image": "/project_image.png"
+  },
+  {
+    "title": "Landing Page Builder",
+    "type": "code",
+    "image": "/project_image.png"
+  },
+  {
+    "title": "Ecommerce Website",
+    "type": "code",
+    "image": "/project_image.png"
+  }
+]

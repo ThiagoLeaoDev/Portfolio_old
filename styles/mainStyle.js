@@ -8,7 +8,7 @@ export const Main = styled.div`
   flex-direction: column;
   align-items: center;
   overflow-x: hidden !important;
-  background-color: var(--bg-secondary);
+  background-color: ${({ theme }) => theme.colors.BgSecondary};
 `;
 
 export const ContainerMainBG = styled.div`
@@ -23,13 +23,13 @@ export const ContainerMainBG = styled.div`
 export const LeftBG = styled.div`
   width: 40%;
   height: 100%;
-  background-color: var(--bg-primary);
+  background-color: ${({ theme }) => theme.colors.BgPrimary};
 `;
 
 export const RightBG = styled.div`
   width: 60%;
   height: 100%;
-  background-color: var(--bg-secondary);
+  background-color: ${({ theme }) => theme.colors.BgSecondary};
 `;
 
 
@@ -68,7 +68,7 @@ export const MenuOption = styled.li`
 `;
 
 export const MenuLink = styled(Link)`
-  color: var(--text-primary);
+  color: ${({ theme }) => theme.colors.TextPrimary};
   font-size: 18px;
   font-weight: 600;
   display: flex;
@@ -77,7 +77,7 @@ export const MenuLink = styled(Link)`
 
   &:hover{
     cursor: pointer;
-    color: var(--primary);
+    color: ${({ theme }) => theme.colors.Primary};
 
     &::after {
       content: "";
@@ -87,7 +87,7 @@ export const MenuLink = styled(Link)`
       height: 6px;
       border-radius: 50%;
       margin-top: -8px;
-      background-color: var(--primary);
+      background-color: ${({ theme }) => theme.colors.Primary};
     }
   }
 `;
@@ -100,7 +100,7 @@ export const ContainerLeft = styled.div`
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  background-color: var(--bg-primary);
+  background-color: ${({ theme }) => theme.colors.BgPrimary};
 `;
 
 export const RotateBG = styled.span`
@@ -113,7 +113,7 @@ export const RotateBG = styled.span`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background-color: var(--bg-primary);
+  background-color: ${({ theme }) => theme.colors.BgPrimary};
   transform: rotate(-27.8deg);
 `;
 
@@ -129,7 +129,7 @@ export const ContentLeft = styled.div`
 `;
 
 export const Name = styled.h2`
-  color: var(--primary);
+  color: ${({ theme }) => theme.colors.Primary};
   font-weight: 700;
   margin-bottom: 8px;
 `;
@@ -138,20 +138,20 @@ export const Line = styled.span`
   width: 75%;
   
   height: 6px;
-  background-color: var(--primary);
+  background-color: ${({ theme }) => theme.colors.Primary};
   align-self: flex-end;
   margin-bottom: 12px;
 `;
 
 export const TitleMain = styled.h1`
   z-index: 2;
-  color: var(--text-primary);
+  color: ${({ theme }) => theme.colors.TextPrimary};
   font-weight: 600;
 `;
 
 export const TitleMainStroke = styled.h1`
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--text-primary);
+  -webkit-text-stroke-color: ${({ theme }) => theme.colors.TextPrimary};
   margin-top: -84px;
   margin-left: 12px;
   margin-bottom: 32px;
@@ -161,7 +161,7 @@ export const TitleMainStroke = styled.h1`
 
 export const Description = styled.h5`
   font-weight: 500;
-  color: var(--text-secondary);
+  color: ${({ theme }) => theme.colors.TextSecondary};
   margin-bottom: 32px;
 `;
 
@@ -183,7 +183,7 @@ export const ButtonCV = styled.button`
   padding: 12px 0px;
   background-color: transparent;
   border: none;
-  color: var(--text-primary);
+  color: ${({ theme }) => theme.colors.TextPrimary};
   font-weight: 600;
   font-size: 18px;
   transition: 0.3s ease;
@@ -201,8 +201,8 @@ export const ButtonPortfolio = styled(ButtonCV)`
   width: 200px;
   justify-content: space-around;
   border-radius: 10px;
-  background-color: var(--primary);
-  color: var(--bg-primary);
+  background-color: ${({ theme }) => theme.colors.Primary};
+  color: ${({ theme }) => theme.colors.BgPrimary};
   padding: 12px 38px;
 `;
 
@@ -222,7 +222,7 @@ export const CircleSocial = styled.a  `
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  background-color: var(--bg-button);
+  background-color: ${({ theme }) => theme.colors.BgButton};
   padding: 16px;
   border-radius: 50%;
   opacity: .5;
@@ -259,7 +259,7 @@ export const Circle = styled.div`
   height: 75vh;
   margin-top: 64px;
   margin-left: -130px;
-  border: 6px solid var(--primary);
+  border: 6px solid ${({ theme }) => theme.colors.Primary};
   border-radius: 50%;
   box-shadow: 0px 0px 50px 9px rgba(19,255,0,0.7), rgba(19,255,0,0.7) 0px 0px 50px 9px inset;
 `;
@@ -282,15 +282,15 @@ export const CircleNav = styled(Link)`
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  border: 3px solid var(--base);
+  border: 3px solid ${({ theme }) => theme.colors.Base};
   margin: 6px 0;
   transition: 0.3s ease;
 
   &:hover{
     cursor: pointer;
-    background-color: #13FF00;
+    background-color: ${({ theme }) => theme.colors.Primary};
     box-shadow: 0px 0px 10px 5px rgba(19,255,0,0.2);
-    border: 3px solid var(--primary);
+    border: 3px solid ${({ theme }) => theme.colors.Primary};
   }
 `;
 
@@ -302,7 +302,7 @@ export const SectionAbout = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--bg-tertiary);
+  background-color: ${({ theme }) => theme.colors.BgTertiary};
 `;
 
 export const Content = styled.div`
@@ -315,7 +315,7 @@ export const Content = styled.div`
 
 export const TitleAbout = styled.h2`
   margin-top: 146px;
-  color: var(--text-primary);
+  color: ${({ theme }) => theme.colors.TextPrimary};
   font-weight: 600;
   margin-bottom: 52px;
   text-align: center;
@@ -325,7 +325,7 @@ export const TitleAbout = styled.h2`
   
   &::after{
   content: '';
-  border-bottom: 4px solid var(--primary);
+  border-bottom: 4px solid ${({ theme }) => theme.colors.Primary};
   width: 45px;
   border-radius: 30px;
   display: block;
@@ -344,13 +344,13 @@ export const SquareComponent = styled(Image)`
 `;
 
 export const TextDescAbout = styled.p`
-  color: var(--text-secondary);
+  color: ${({ theme }) => theme.colors.TextSecondary};
   text-align: center;
   font-weight: 500;
 `;
 
 export const GreenText = styled.b`
-  color: var(--primary);
+  color: ${({ theme }) => theme.colors.Primary};
 `;
 
 export const Jump = styled.br`
@@ -377,7 +377,7 @@ export const ContainerComponentAbout = styled.div`
 `;
 
 export const TitleServices = styled.h3`
-  color: var(--text-primary);
+  color: ${({ theme }) => theme.colors.TextPrimary};
   font-weight: 600;
   margin-bottom: 52px;
   text-align: center;
@@ -405,7 +405,7 @@ export const BoxIconTextServices = styled.div`
 `;
 
 export const TextServices = styled.p`
-  color: var(--text-primary);
+  color: ${({ theme }) => theme.colors.TextPrimary};
   margin-left: 8px;
   font-size: 20px;
   font-weight: 500;
@@ -429,7 +429,7 @@ export const ContainerColumnsEducationJobs = styled.div`
 `;
 
 export const TitleColumnEducationJobs = styled.h3`
-  color: var(--text-primary);
+  color: ${({ theme }) => theme.colors.TextPrimary};
   font-weight: 600;
   margin-bottom: 20px;
   text-align: left;
@@ -446,12 +446,12 @@ export const BoxInfoEducationJobs = styled.div`
 `;
 
 export const DateEducationJobs = styled.p`
-  color: var(--text-primary);
+  color: ${({ theme }) => theme.colors.TextPrimary};
   font-weight: 500;
 `;
 
 export const TitleEducationJobs = styled.p`
-  color: var(--primary);
+  color: ${({ theme }) => theme.colors.Primary};
   font-weight: 500;
   font-size: 22px;
   margin: 6px 0;
@@ -463,26 +463,30 @@ export const InstitutionEducationJobs = styled.p`
 `;
 
 
-// ----------------------- PORTFOLIO -----------------------
+// ----------------------- PROJECTS -----------------------
 
-export const SectionPortfolio = styled.div`
-  width: 100%;
+export const SectionProjects = styled.div`
+  position: relative;
+  width: 100vw;
   height: 100vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-color: var(--bg-primary);
+  background-color: ${({ theme }) => theme.colors.BgPrimary};
 `;
+
+  export const TitleProjects = styled(TitleAbout)`
+`;
+
+
 
 // ----------------------- CONTACT -----------------------
 
 export const SectionContact = styled.div`
+  z-index: 2;
   width: 100%;
-  height: 100vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-secundary);
 `;
