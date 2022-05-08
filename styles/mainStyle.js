@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import Image from 'next/image'
+import Carousel from "nuka-carousel";
 import {Link} from "react-scroll";
 
 export const Main = styled.div`
@@ -197,13 +198,28 @@ export const ButtonCV = styled.button`
   }
 `;
 
-export const ButtonPortfolio = styled(ButtonCV)`
-  width: 200px;
-  justify-content: space-around;
-  border-radius: 10px;
+export const ButtonPortfolio = styled(Link)`
+  width: 120px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   background-color: ${({ theme }) => theme.colors.Primary};
+  border: none;
+  border-radius: 10px;
   color: ${({ theme }) => theme.colors.BgPrimary};
   padding: 12px 38px;
+  font-weight: 600;
+  font-size: 18px;
+  transition: 0.3s ease;
+
+  &:hover{
+    cursor: pointer;
+    transform: translateY(2px);
+  }
+  &:active {
+    transform: translateY(6px);
+  }
 `;
 
 export const ContainerSocial = styled.div`
@@ -475,18 +491,253 @@ export const SectionProjects = styled.div`
   background-color: ${({ theme }) => theme.colors.BgPrimary};
 `;
 
-  export const TitleProjects = styled(TitleAbout)`
+export const CircleDecoration = styled.div`
+  position: absolute;
+  top: -300px;
+  right: -300px;
+  z-index: 0;
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  background-color: ${({ theme }) => theme.colors.BgDecoration};
 `;
 
+export const CircleDecorationLeft = styled.div`
+  position: absolute;
+  left: -300px;
+  bottom: -300px;
+  z-index: 0;
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  background-color: ${({ theme }) => theme.colors.BgDecoration};
+`;
+
+
+export const TitleProjects = styled(TitleAbout)`
+  z-index: 1;
+`;
+
+  export const ComponentCarousel = styled(Carousel)`
+    z-index: 1;
+    height: 100%;
+    padding: 90px 50px;
+  `;
+  
 
 
 // ----------------------- CONTACT -----------------------
 
 export const SectionContact = styled.div`
-  z-index: 2;
-  width: 100%;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--bg-secundary);
+  justify-content: center;  
+  background-color: ${({ theme }) => theme.colors.BgTertiary  }; 
+`;
+
+export const ContainerContact = styled.div`
+  width: 100%;
+  max-width: 1920px;
+  height: 440px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 33px;
+`;
+
+export const ContainerContactInfo = styled.div`
+  position: relative;
+  max-width: 605px;
+  height: 100%;
+  padding: 94px 100px 170px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: ${({ theme }) => theme.colors.BgCard};
+  border-top-left-radius: 33px;
+  border-bottom-left-radius: 33px;
+`;
+
+export const GroupContactInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+`;
+
+export const TitleContactInfo = styled.p`
+  color: ${({ theme }) => theme.colors.TextPrimary};
+  font-weight: 600;
+  font-size: 34px;
+  margin-bottom: 80px;
+  text-align: left;
+  
+  &:before {
+    position: absolute;
+    content: '';
+    right: 0;
+    width: 48%;
+    text-align: right;
+    height: 3px;
+    margin-top: 25px;
+    background-color: ${({ theme }) => theme.colors.TextPrimary};
+    margin-bottom: 20px;
+  }
+`;
+
+export const ContainerContactInfoItem = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 56px;
+  height: 100%;
+
+  &:last-child {
+    margin-bottom: 80px;
+  }
+`;
+
+export const TextContactInfo = styled.p`
+  color: ${({ theme }) => theme.colors.TextPrimary};
+  margin-left: 24px;
+  font-size: 20px;
+  font-weight: 500;
+`;
+
+export const LinkAction = styled.a`
+  color: ${({ theme }) => theme.colors.TextPrimary};
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    color: ${({ theme }) => theme.colors.TextPrimary};
+  }
+`;
+
+export const LineContact = styled.span`
+  position: absolute;
+  content: '';
+  left: 0;
+  width: 48%;
+  height: 3px;
+  bottom: 94px;
+  background-color: ${({ theme }) => theme.colors.TextPrimary};
+  margin-bottom: 20px;
+`;
+
+export const ContainerContactForm = styled.div`
+  max-width: 831px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 132px 50px;
+  background-color: ${({ theme }) => theme.colors.BgPrimary};
+  border-top-right-radius: 33px;
+  border-bottom-right-radius: 33px;
+`;
+
+export const FormContact = styled.form`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 731px;
+  padding: 0 50px;
+`;
+
+export const GroupLabelInput = styled.div`
+  width:  ${(props) => props.width};
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-right: ${(props) => props.margin};
+  margin-bottom: 40px;
+`;
+
+export const LabelContact = styled.p`
+  color: ${({ theme }) => theme.colors.TextTertiary};
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+`;
+
+export const InputContact = styled.input`
+  box-sizing: border-box;
+  width: 100%;
+  height: ${(props) => props.height || '40px'};
+  border-radius: 8px;
+  padding: 0 16px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 0;
+  color: ${({ theme }) => theme.colors.TextPrimary};
+  background-color: ${({ theme }) => theme.colors.BgInput};
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+export const InputContactText = styled.textarea`
+  box-sizing: border-box;
+  width: 100%;
+  height: ${(props) => props.height || '40px'};
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 0;
+  color: ${({ theme }) => theme.colors.TextPrimary};
+  background-color: ${({ theme }) => theme.colors.BgInput};
+  resize: none;
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+export const ButtonContact = styled.button`
+  justify-content: space-around;
+  width: 154px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: ${({ theme }) => theme.colors.Primary};
+  border: none;
+  border-radius: 10px;
+  color: ${({ theme }) => theme.colors.BgPrimary};
+  padding: 12px 38px;
+  font-weight: 600;
+  font-size: 18px;
+  transition: 0.3s ease;
+  line-height: 14px;
+
+  &:hover{
+    cursor: pointer;
+    transform: translateY(2px);
+  }
+  &:active {
+    transform: translateY(6px);
+  }
+`;
+
+export const ContainerButton = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
 `;

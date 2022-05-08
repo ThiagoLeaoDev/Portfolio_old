@@ -1,8 +1,8 @@
 import { MdOutlineCloudDownload } from "react-icons/md";
-import { FiArrowDownCircle } from "react-icons/fi";
+import { CgChevronDoubleDownO } from "react-icons/cg";
+import { HiOutlinePhone, HiOutlineMail, HiOutlineLocationMarker, HiOutlineMailOpen } from "react-icons/hi";
 import { FaInstagram, FaGithub, FaDribbble, FaBehance } from "react-icons/fa";
 import { BiCodeBlock, BiLayout, BiMobile, BiRocket } from "react-icons/bi";
-import Carousel from "nuka-carousel";
 
 import * as SC from "../styles/mainStyle";
 
@@ -67,8 +67,8 @@ export default function Home() {
                 <MdOutlineCloudDownload color="white" size="1.8em" />
                 Download CV
               </SC.ButtonCV>
-              <SC.ButtonPortfolio>
-                <FiArrowDownCircle color="#ffffff " size="1.5em" />
+              <SC.ButtonPortfolio to="projects" spy={true} smooth={true} >
+                <CgChevronDoubleDownO color="#202020 " size="1.5em" />
                 Portfolio
               </SC.ButtonPortfolio>
             </SC.ContainerButtonsMain>
@@ -96,6 +96,7 @@ export default function Home() {
               layout="fill"
               objectFit="cover"
               quality={100}
+              alt="Portfolio"
             />
             <SC.Circle />
           </SC.ContainerImage>
@@ -234,11 +235,35 @@ export default function Home() {
       </SC.SectionAbout>
 
       <SC.SectionProjects id="projects">
+        <SC.CircleDecoration />
         <SC.Content>
           <SC.TitleProjects>PROJECTS</SC.TitleProjects>
 
-          <Carousel wrapAround={true} slidesToShow={3} 
-            slidesToScroll={1} cellSpacing={2}>
+          <SC.ComponentCarousel
+            wrapAround={true}
+            slidesToShow={3.2}
+            cellAlign="center"
+            lazyLoad={false}
+            defaultControlsConfig={{
+              nextButtonStyle: {
+                display: "none",
+              },
+              prevButtonStyle: {
+                display: "none",
+              },
+              pagingDotsStyle: {
+                backgroundColor: "#13FF00",
+                borderRadius: "50%",
+                height: "12px",
+                width: "10px",
+                margin: "0px 5px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                boxShadow: "0px 0px 10px #13FF00",
+              },
+            }}
+          >
             {projects.map((project, index) => {
               return (
                 <CardProjects
@@ -249,10 +274,95 @@ export default function Home() {
                 />
               );
             })}
-          </Carousel>
+          </SC.ComponentCarousel>
         </SC.Content>
+        <SC.CircleDecorationLeft />
       </SC.SectionProjects>
-      <SC.SectionContact id="contact"></SC.SectionContact>
+
+      <SC.SectionContact id="contact">
+        <SC.Content>
+          <SC.ContainerContact>
+            <SC.ContainerContactInfo>
+              <SC.GroupContactInfo>
+                <SC.TitleContactInfo>CONTACT</SC.TitleContactInfo>
+                <SC.ContainerContactInfoItem>
+                  <HiOutlinePhone color="#FFFFFF" size="1.8em" />
+                  <SC.TextContactInfo>+55 (11) 99999-9999</SC.TextContactInfo>
+                </SC.ContainerContactInfoItem>
+                <SC.ContainerContactInfoItem>
+                  <HiOutlineMail color="#FFFFFF" size="1.8em" />
+                  <SC.TextContactInfo>
+                    <SC.LinkAction
+                      href="mailto:thiagoleao.dev@gmail.com"
+                      target="_blank"
+                    >
+                      thiagoleao.dev@gmail.com
+                    </SC.LinkAction>
+                  </SC.TextContactInfo>
+                </SC.ContainerContactInfoItem>
+                <SC.ContainerContactInfoItem>
+                  <HiOutlineLocationMarker color="#FFFFFF" size="1.8em" />
+                  <SC.TextContactInfo>
+                    <SC.LinkAction
+                      href="https://www.google.com/maps/place/São+Vicente,+State+of+São+Paulo/@-23.9541785,-46.4661425,13z/data=!3m1!4b1!4m5!3m4!1s0x94ce1be795087ec7:0xe6e95e9915fa8605!8m2!3d-23.9603273!4d-46.3968727"
+                      target="_blank"
+                    >
+                      Santos, SP, Brazil
+                    </SC.LinkAction>
+                  </SC.TextContactInfo>
+                </SC.ContainerContactInfoItem>
+                <SC.LineContact />
+              </SC.GroupContactInfo>
+            </SC.ContainerContactInfo>
+
+            <SC.ContainerContactForm>
+              <SC.FormContact>
+                <SC.GroupLabelInput margin="55px" width="290px">
+                  <SC.LabelContact>Your name</SC.LabelContact>
+                  <SC.InputContact type="text" name="name" id="name" required/>
+                </SC.GroupLabelInput>
+
+                <SC.GroupLabelInput width="386px">
+                  <SC.LabelContact>Your email</SC.LabelContact>
+                  <SC.InputContact
+                    type="email"
+                    name="email"
+                    id="email"
+                    required
+                  />
+                </SC.GroupLabelInput>
+
+                <SC.GroupLabelInput width="100%">
+                  <SC.LabelContact>Subject</SC.LabelContact>
+                  <SC.InputContact
+                    type="text"
+                    name="subject"
+                    id="subject"
+                    required
+                  />
+                </SC.GroupLabelInput>
+
+                <SC.GroupLabelInput width="100%">
+                  <SC.LabelContact>Message</SC.LabelContact>
+                  <SC.InputContactText
+                    type=""
+                    name="message"
+                    id="message"
+                    required
+                    height="160px"
+                  />
+                </SC.GroupLabelInput>
+                <SC.ContainerButton>
+                  <SC.ButtonContact type="submit">
+                    <HiOutlineMailOpen color="#202020" size="1.2em" />
+                  Send
+                </SC.ButtonContact>
+                </SC.ContainerButton>
+              </SC.FormContact>
+            </SC.ContainerContactForm>
+          </SC.ContainerContact>
+        </SC.Content>
+      </SC.SectionContact>
     </SC.Main>
   );
 }

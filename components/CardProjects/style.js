@@ -86,13 +86,6 @@ export const ButtonView = styled.div`
   }
 `;
 
-export const ButtonTextLive = styled.p`
-  color: ${({ theme }) => theme.colors.TextNegativePrimary};
-  font-weight: 600;
-  font-size: 1rem;
-  transition: color 0.2s ease-in-out;
-`;
-
 export const ButtonLive = styled.div`
   display: flex;
   flex-direction: row;
@@ -100,36 +93,18 @@ export const ButtonLive = styled.div`
   padding: 8px 30px;
   background-color: ${({ theme }) => theme.colors.Primary};
   border-radius: 10px;
-  transition: background-color 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out;
 
   &:hover {
     cursor: pointer;
-    background-color: ${({ theme }) => theme.colors.BgPrimary};
-    transition: background-color 0.2s ease-in-out;
-
-    ${ButtonTextLive} {
-      color: ${({ theme }) => theme.colors.TextPrimary};
-      transition: color 0.2s ease-in-out;
-    }
+    box-shadow: 0px 0px 10px ${({ theme }) => theme.colors.Primary};
+    transition: box-shadow 0.2s ease-in-out;
   }
 `;
 
-
-// export const Button = styled.div`
-//   width: 160px;
-//   height: 45px;
-//   border-radius: 25px;
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-around;
-//   align-items: center;
-//   background-color: #ffffff;
-// `;
-
-// export const TextButton = styled.p`
-//   font-weight: 900;
-//   font-size: 1rem;
-//   color: #3B3C4B;
-//   margin: 0px;
-//   margin-left: 10px;
-// `;
+export const ButtonTextLive = styled.p`
+  color: ${({ theme }) => theme.colors.TextNegativePrimary};
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s ease-in-out;
+`;

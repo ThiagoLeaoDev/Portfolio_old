@@ -113,16 +113,20 @@ const light = {
   colors: {
     Primary: "#13FF00",
     PrimaryHover: "#33FF22",
+    Base: "#ffffff",
 
     BgPrimary: "#202020",
     BgSecondary: "#3F3F3F",
     BgTertiary: "#161616",
+
     BgButton: "#303030",
     BgCard: "#272727",
-    Base: "#ffffff",
+    BgDecoration: "#252525",
+    BgInput: "#343434",
 
     TextPrimary: "#FFFFFF",
     TextSecondary: "#8F8F8F",
+    TextTertiary: "#C1C1C1",
 
     TextNegativePrimary: "#202020",
   },
