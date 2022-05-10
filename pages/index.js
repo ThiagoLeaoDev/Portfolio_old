@@ -1,6 +1,13 @@
+import { useState } from "react";
+
 import { MdOutlineCloudDownload } from "react-icons/md";
 import { CgChevronDoubleDownO } from "react-icons/cg";
-import { HiOutlinePhone, HiOutlineMail, HiOutlineLocationMarker, HiOutlineMailOpen } from "react-icons/hi";
+import {
+  HiOutlinePhone,
+  HiOutlineMail,
+  HiOutlineLocationMarker,
+  HiOutlineMailOpen,
+} from "react-icons/hi";
 import { FaInstagram, FaGithub, FaDribbble, FaBehance } from "react-icons/fa";
 import { BiCodeBlock, BiLayout, BiMobile, BiRocket } from "react-icons/bi";
 
@@ -8,10 +15,12 @@ import * as SC from "../styles/mainStyle";
 
 import AboutMeText from "../components/AboutMeText";
 import CardProjects from "../components/CardProjects";
+import ContactForm from "../components/contactForm.js";
 
 import projects from "./projects.json";
 
 export default function Home() {
+
   return (
     <SC.Main>
       <SC.ContainerMenu>
@@ -67,7 +76,7 @@ export default function Home() {
                 <MdOutlineCloudDownload color="white" size="1.8em" />
                 Download CV
               </SC.ButtonCV>
-              <SC.ButtonPortfolio to="projects" spy={true} smooth={true} >
+              <SC.ButtonPortfolio to="projects" spy={true} smooth={true}>
                 <CgChevronDoubleDownO color="#202020 " size="1.5em" />
                 Portfolio
               </SC.ButtonPortfolio>
@@ -314,51 +323,8 @@ export default function Home() {
                 <SC.LineContact />
               </SC.GroupContactInfo>
             </SC.ContainerContactInfo>
-
             <SC.ContainerContactForm>
-              <SC.FormContact>
-                <SC.GroupLabelInput margin="55px" width="290px">
-                  <SC.LabelContact>Your name</SC.LabelContact>
-                  <SC.InputContact type="text" name="name" id="name" required/>
-                </SC.GroupLabelInput>
-
-                <SC.GroupLabelInput width="386px">
-                  <SC.LabelContact>Your email</SC.LabelContact>
-                  <SC.InputContact
-                    type="email"
-                    name="email"
-                    id="email"
-                    required
-                  />
-                </SC.GroupLabelInput>
-
-                <SC.GroupLabelInput width="100%">
-                  <SC.LabelContact>Subject</SC.LabelContact>
-                  <SC.InputContact
-                    type="text"
-                    name="subject"
-                    id="subject"
-                    required
-                  />
-                </SC.GroupLabelInput>
-
-                <SC.GroupLabelInput width="100%">
-                  <SC.LabelContact>Message</SC.LabelContact>
-                  <SC.InputContactText
-                    type=""
-                    name="message"
-                    id="message"
-                    required
-                    height="160px"
-                  />
-                </SC.GroupLabelInput>
-                <SC.ContainerButton>
-                  <SC.ButtonContact type="submit">
-                    <HiOutlineMailOpen color="#202020" size="1.2em" />
-                  Send
-                </SC.ButtonContact>
-                </SC.ContainerButton>
-              </SC.FormContact>
+              <ContactForm/>
             </SC.ContainerContactForm>
           </SC.ContainerContact>
         </SC.Content>
