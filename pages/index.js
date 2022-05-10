@@ -6,7 +6,6 @@ import {
   HiOutlinePhone,
   HiOutlineMail,
   HiOutlineLocationMarker,
-  HiOutlineMailOpen,
 } from "react-icons/hi";
 import { FaInstagram, FaGithub, FaDribbble, FaBehance } from "react-icons/fa";
 import { BiCodeBlock, BiLayout, BiMobile, BiRocket } from "react-icons/bi";
@@ -20,7 +19,6 @@ import ContactForm from "../components/contactForm.js";
 import projects from "./projects.json";
 
 export default function Home() {
-
   return (
     <SC.Main>
       <SC.ContainerMenu>
@@ -247,32 +245,7 @@ export default function Home() {
         <SC.CircleDecoration />
         <SC.Content>
           <SC.TitleProjects>PROJECTS</SC.TitleProjects>
-
-          <SC.ComponentCarousel
-            wrapAround={true}
-            slidesToShow={3.2}
-            cellAlign="center"
-            lazyLoad={false}
-            defaultControlsConfig={{
-              nextButtonStyle: {
-                display: "none",
-              },
-              prevButtonStyle: {
-                display: "none",
-              },
-              pagingDotsStyle: {
-                backgroundColor: "#13FF00",
-                borderRadius: "50%",
-                height: "12px",
-                width: "10px",
-                margin: "0px 5px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                boxShadow: "0px 0px 10px #13FF00",
-              },
-            }}
-          >
+          <SC.ContainerProjects>
             {projects.map((project, index) => {
               return (
                 <CardProjects
@@ -283,7 +256,7 @@ export default function Home() {
                 />
               );
             })}
-          </SC.ComponentCarousel>
+          </SC.ContainerProjects>
         </SC.Content>
         <SC.CircleDecorationLeft />
       </SC.SectionProjects>
@@ -324,7 +297,7 @@ export default function Home() {
               </SC.GroupContactInfo>
             </SC.ContainerContactInfo>
             <SC.ContainerContactForm>
-              <ContactForm/>
+              <ContactForm />
             </SC.ContainerContactForm>
           </SC.ContainerContact>
         </SC.Content>

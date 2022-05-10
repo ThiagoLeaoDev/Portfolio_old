@@ -3,10 +3,18 @@ import Image from "next/image";
 import {HiOutlineArrowNarrowRight} from 'react-icons/hi'
 
 export const ContainerCard = styled.div`
+  z-index: 1;
   height: 436px;
-  width: 350px;
+  width: 100%;
+  max-width: 350px;
   background-color: ${({ theme }) => theme.colors.BgCard};
   border-radius:  20px;
+  float: left !important;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  place-self: center;
 `;
 
 export const ContainerImage = styled.div`
@@ -48,10 +56,12 @@ export const TypeName = styled.p`
 
 export const ContainerButtons = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  box-sizing: border-box;
 `;
 
 export const ArrowIcon = styled(HiOutlineArrowNarrowRight)`
@@ -70,6 +80,7 @@ export const ButtonView = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+
 
   &:hover {
     cursor: pointer;

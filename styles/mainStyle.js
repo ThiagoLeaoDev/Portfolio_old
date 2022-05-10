@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import Image from 'next/image'
-import Carousel from "nuka-carousel";
 import {Link} from "react-scroll";
 
 export const Main = styled.div`
@@ -484,11 +483,12 @@ export const InstitutionEducationJobs = styled.p`
 export const SectionProjects = styled.div`
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: ${({ theme }) => theme.colors.BgPrimary};
+  padding-bottom: 30px;
 `;
 
 export const CircleDecoration = styled.div`
@@ -518,12 +518,14 @@ export const TitleProjects = styled(TitleAbout)`
   z-index: 1;
 `;
 
-  export const ComponentCarousel = styled(Carousel)`
-    z-index: 1;
-    height: 100%;
-    padding: 90px 50px;
-  `;
-  
+export const ContainerProjects = styled.div`
+  width: 100%;
+  max-width: 1920px;
+  margin: 6rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(342px, 1fr));
+  gap: 4rem;
+`;
 
 
 // ----------------------- CONTACT -----------------------
