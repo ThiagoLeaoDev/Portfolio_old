@@ -7,7 +7,7 @@ import {
   HiOutlineMail,
   HiOutlineLocationMarker,
 } from "react-icons/hi";
-import { FaInstagram, FaGithub, FaDribbble, FaBehance } from "react-icons/fa";
+import { FaLinkedinIn, FaGithub, FaDribbble, FaFigma } from "react-icons/fa";
 import { BiCodeBlock, BiLayout, BiMobile, BiRocket } from "react-icons/bi";
 
 import * as SC from "../styles/mainStyle";
@@ -51,19 +51,13 @@ export default function Home() {
         <SC.CircleNav to="projects" spy={true} smooth={true} />
         <SC.CircleNav to="contact" spy={true} smooth={true} />
       </SC.ContainerNavigationRight>
-      <SC.ContainerMainBG>
-        <SC.LeftBG></SC.LeftBG>
-        <SC.RightBG></SC.RightBG>
-      </SC.ContainerMainBG>
+
       <SC.SectionHero id="home">
-        <SC.ContainerLeft>
-          <SC.ContentLeft>
+        <SC.GroupLeftRight>
+          <SC.ContainerLeft>
             <SC.Name>THIAGO LEÃO</SC.Name>
             <SC.Line />
             <SC.TitleMain>Front-end Developer &amp; UI Designer</SC.TitleMain>
-            <SC.TitleMainStroke>
-              Front-end Developer &amp; UI Designer
-            </SC.TitleMainStroke>
             <SC.Description>
               Front-end developer focused on creating Web and Mobile
               applications. I really like different projects that solve real
@@ -81,7 +75,7 @@ export default function Home() {
             </SC.ContainerButtonsMain>
             <SC.ContainerSocial>
               <SC.CircleSocial>
-                <FaInstagram color="white" size="1.8em" />
+                <FaLinkedinIn color="white" size="1.8em" />
               </SC.CircleSocial>
               <SC.CircleSocial>
                 <FaGithub color="white" size="1.8em" />
@@ -90,24 +84,23 @@ export default function Home() {
                 <FaDribbble color="white" size="1.8em" />
               </SC.CircleSocial>
               <SC.CircleSocial>
-                <FaBehance color="white" size="1.8em" />
+                <FaFigma color="white" size="1.8em" />
               </SC.CircleSocial>
             </SC.ContainerSocial>
-          </SC.ContentLeft>
-          <SC.RotateBG />
-        </SC.ContainerLeft>
-        <SC.ContainerRight>
-          <SC.ContainerImage>
-            <SC.MainImage
-              src="/portifolio_grey.png"
-              layout="fill"
-              objectFit="cover"
-              quality={100}
-              alt="Portfolio"
-            />
-            <SC.Circle />
-          </SC.ContainerImage>
-        </SC.ContainerRight>
+          </SC.ContainerLeft>
+          <SC.ContainerRight>
+            <SC.ContainerImage>
+              <SC.MainImage
+                src="/portifolio_grey.png"
+                layout="fill"
+                objectFit="cover"
+                quality={100}
+                alt="Portfolio"
+              />
+              <SC.Circle />
+            </SC.ContainerImage>
+          </SC.ContainerRight>
+        </SC.GroupLeftRight>
       </SC.SectionHero>
 
       <SC.SectionAbout id="about">
@@ -289,7 +282,7 @@ export default function Home() {
                       href="https://www.google.com/maps/place/São+Vicente,+State+of+São+Paulo/@-23.9541785,-46.4661425,13z/data=!3m1!4b1!4m5!3m4!1s0x94ce1be795087ec7:0xe6e95e9915fa8605!8m2!3d-23.9603273!4d-46.3968727"
                       target="_blank"
                     >
-                      Santos, SP, Brazil
+                      São Vicente, SP, Brazil
                     </SC.LinkAction>
                   </SC.TextContactInfo>
                 </SC.ContainerContactInfoItem>
@@ -301,6 +294,11 @@ export default function Home() {
             </SC.ContainerContactForm>
           </SC.ContainerContact>
         </SC.Content>
+        <SC.Footer>
+          <SC.TextFooter>
+            © 2022 Thiago Leão. All rights reserved.
+          </SC.TextFooter>
+        </SC.Footer>
       </SC.SectionContact>
     </SC.Main>
   );

@@ -11,37 +11,6 @@ export const Main = styled.div`
   background-color: ${({ theme }) => theme.colors.BgSecondary};
 `;
 
-export const ContainerMainBG = styled.div`
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
-
-export const LeftBG = styled.div`
-  width: 40%;
-  height: 100%;
-  background-color: ${({ theme }) => theme.colors.BgPrimary};
-`;
-
-export const RightBG = styled.div`
-  width: 60%;
-  height: 100%;
-  background-color: ${({ theme }) => theme.colors.BgSecondary};
-`;
-
-
-export const SectionHero = styled.div`
-  width: 100%;
-  max-width: 1920px;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-`;
 
 export const ContainerMenu = styled.div`
   z-index: 100;
@@ -92,77 +61,115 @@ export const MenuLink = styled(Link)`
   }
 `;
 
-export const ContainerLeft = styled.div`
-  position: relative;
-  width: 40%;
+export const ContainerNavigationRight = styled.div`
+  z-index: 100;
+  position: fixed;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  background-color: ${({ theme }) => theme.colors.BgPrimary};
-`;
-
-export const RotateBG = styled.span`
-  z-index: 1;
-  position: absolute;
-  right: -240px;
-  width: 100%;
-  height: 200vh;
+  width: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  background-color: ${({ theme }) => theme.colors.BgPrimary};
-  transform: rotate(-27.8deg);
+  justify-content: center;
+  right: 0;
+  padding: 30px;
+  
 `;
 
-export const ContentLeft = styled.div`
-  z-index: 2;
-  max-width: 590px;
-  width: 80%;
-  padding-top: 240px;
+export const CircleNav = styled(Link)`
+  z-index: 100;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 3px solid ${({ theme }) => theme.colors.Base};
+  margin: 6px 0;
+  transition: 0.3s ease;
+
+  &:hover{
+    cursor: pointer;
+    background-color: ${({ theme }) => theme.colors.Primary};
+    box-shadow: 0px 0px 10px 5px rgba(19,255,0,0.2);
+    border: 3px solid ${({ theme }) => theme.colors.Primary};
+  }
+`;
+
+export const SectionHero = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, ${({ theme }) => theme.colors.BgPrimary} 80%, ${({ theme }) => theme.colors.BgSecondary} 20%);
+`;
+
+export const GroupLeftRight = styled.div`
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const ContainerLeft = styled.div`
+  width: 40%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  padding: 120px 80px 0 80px;
+  box-sizing: border-box;
+  background-color: ${({ theme }) => theme.colors.BgPrimary};
+
+  @media only screen and (max-width: 1440px) {
+    width: 45%;
+  }
 `;
 
 export const Name = styled.h2`
   color: ${({ theme }) => theme.colors.Primary};
   font-weight: 700;
   margin-bottom: 8px;
+  font-size: clamp(20px, 2.2vw, 38px);
 `;
 
 export const Line = styled.span`
   width: 75%;
   
-  height: 6px;
+  height: 5px;
   background-color: ${({ theme }) => theme.colors.Primary};
   align-self: flex-end;
   margin-bottom: 12px;
 `;
 
 export const TitleMain = styled.h1`
+  position: relative;
   z-index: 2;
   color: ${({ theme }) => theme.colors.TextPrimary};
   font-weight: 600;
-`;
+  margin-bottom: 40px;
+  font-size: clamp(28px, 2.4vw, 48px);
 
-export const TitleMainStroke = styled.h1`
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: ${({ theme }) => theme.colors.TextPrimary};
-  margin-top: -84px;
-  margin-left: 12px;
-  margin-bottom: 32px;
-  font-weight: 600;
-  opacity: 0.1;
+  &:after{
+    content: "Front-end Developer & UI Designer";
+    position: absolute;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: ${({ theme }) => theme.colors.TextPrimary};
+    color: transparent;
+    left: 6px;
+    top: 6px;
+    font-weight: 600;
+    opacity: 0.1;
+    font-size: clamp(28px, 2.4vw, 48px);
+  }
 `;
 
 export const Description = styled.h5`
   font-weight: 500;
   color: ${({ theme }) => theme.colors.TextSecondary};
   margin-bottom: 32px;
+  font-size: clamp(12px, 1.4vw, 20px);
 `;
 
 export const ContainerButtonsMain = styled.div`
@@ -171,7 +178,8 @@ export const ContainerButtonsMain = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 120px;
+  flex-wrap: wrap;
+  margin-bottom: 3vw;
 `;
 
 export const ButtonCV = styled.button`
@@ -211,7 +219,6 @@ export const ButtonPortfolio = styled(Link)`
   font-weight: 600;
   font-size: 18px;
   transition: 0.3s ease;
-
   &:hover{
     cursor: pointer;
     transform: translateY(2px);
@@ -224,15 +231,15 @@ export const ButtonPortfolio = styled(Link)`
 export const ContainerSocial = styled.div`
   z-index: 2;
   bottom: 100px;
-  max-width: 590px;
-  width: 55%;
+  max-width: 300px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 `;
 
-export const CircleSocial = styled.a  `
+export const CircleSocial = styled.a`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -242,7 +249,6 @@ export const CircleSocial = styled.a  `
   border-radius: 50%;
   opacity: .5;
   transition: 0.3s ease;
-
   &:hover{
     cursor: pointer;
     opacity: 1;
@@ -251,18 +257,29 @@ export const CircleSocial = styled.a  `
 
 export const ContainerRight = styled.div`
   width: 60%;
-  height: 100vh;
+  height: 100%;
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-left: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: ${({ theme }) => theme.colors.BgSecondary};
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 46% 100%);
+
+  @media only screen and (max-width: 1440px) {
+    width: 55%;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 58vh 100%);
+  }
 `;
 
 export const ContainerImage = styled.div`
   position: relative;
-  width: 440px;
+  max-width: 440px;
+  width: 40vh;
   height: 80vh;
-  margin-left: 126px;
+  margin-left: 5%;
 `;
 
 export const MainImage = styled(Image)`
@@ -279,35 +296,6 @@ export const Circle = styled.div`
   box-shadow: 0px 0px 50px 9px rgba(19,255,0,0.7), rgba(19,255,0,0.7) 0px 0px 50px 9px inset;
 `;
 
-export const ContainerNavigationRight = styled.div`
-  z-index: 100;
-  position: fixed;
-  height: 100vh;
-  width: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  right: 0;
-  padding: 30px;
-`;
-
-export const CircleNav = styled(Link)`
-  z-index: 100;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  border: 3px solid ${({ theme }) => theme.colors.Base};
-  margin: 6px 0;
-  transition: 0.3s ease;
-
-  &:hover{
-    cursor: pointer;
-    background-color: ${({ theme }) => theme.colors.Primary};
-    box-shadow: 0px 0px 10px 5px rgba(19,255,0,0.2);
-    border: 3px solid ${({ theme }) => theme.colors.Primary};
-  }
-`;
 
 // ----------------------- ABOUT ME -----------------------
 
@@ -409,6 +397,13 @@ export const ContainerServices = styled.div`
   flex-wrap: wrap;
 `;
 
+export const TextServices = styled.p`
+  color: ${({ theme }) => theme.colors.TextPrimary};
+  margin-left: 8px;
+  font-size: 20px;
+  font-weight: 500;
+`;
+
 export const BoxIconTextServices = styled.div`
   width: 250px;
   display: flex;
@@ -417,13 +412,14 @@ export const BoxIconTextServices = styled.div`
   justify-content: left;
   padding: 40px 0;
   margin: 0 100px;
-`;
 
-export const TextServices = styled.p`
-  color: ${({ theme }) => theme.colors.TextPrimary};
-  margin-left: 8px;
-  font-size: 20px;
-  font-weight: 500;
+  @media only screen and (max-width: 1440px) {
+    flex-direction: column;
+
+    ${TextServices}{
+      margin-top: 12px;
+    }
+  }
 `;
 
 export const ContainerEducationJobs = styled(Content)`
@@ -431,16 +427,6 @@ export const ContainerEducationJobs = styled(Content)`
   width: 100%;
   max-width: 1920px;
   padding: 86px 0;
-`;
-
-export const ContainerColumnsEducationJobs = styled.div`
-  width: 84%;
-  max-width: 700px;
-  margin-bottom: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
 `;
 
 export const TitleColumnEducationJobs = styled.h3`
@@ -477,6 +463,35 @@ export const InstitutionEducationJobs = styled.p`
   font-weight: 500;
 `;
 
+export const ContainerColumnsEducationJobs = styled.div`
+  width: 84%;
+  max-width: 700px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media only screen and (max-width: 720px) {
+    flex-direction: column;
+
+    ${TitleColumnEducationJobs}{
+      text-align: center;
+    }
+
+    ${DateEducationJobs}{
+      text-align: center;
+    }
+
+    ${TitleEducationJobs}{
+      text-align: center;
+    }
+
+    ${InstitutionEducationJobs}{
+      text-align: center;
+    }
+  }
+`;
 
 // ----------------------- PROJECTS -----------------------
 
@@ -542,14 +557,18 @@ export const SectionContact = styled.div`
 `;
 
 export const ContainerContact = styled.div`
-  width: 100%;
+  width: 90%;
   max-width: 1920px;
-  height: 440px;
+  height: 300px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   border-radius: 33px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const ContainerContactInfo = styled.div`
@@ -635,6 +654,7 @@ export const LineContact = styled.span`
 
 export const ContainerContactForm = styled.div`
   max-width: 831px;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -652,9 +672,14 @@ export const FormContact = styled.form`
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 100%;
+  width: 90%;
   max-width: 731px;
   padding: 0 50px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 0;
+  }
 `;
 
 export const GroupLabelInput = styled.div`
@@ -742,4 +767,24 @@ export const ContainerButton = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
+`;
+
+export const Footer = styled.footer`
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: ${({ theme }) => theme.colors.BgPrimary};
+  padding: 20px 100px;
+  box-sizing: border-box;
+`;
+
+export const TextFooter = styled.p`
+  color: ${({ theme }) => theme.colors.TextSecondary};
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
 `;
