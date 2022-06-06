@@ -1,6 +1,6 @@
-import styled from "styled-components"
-import Image from 'next/image'
-import {Link} from "react-scroll";
+import styled from "styled-components";
+import Image from "next/image";
+import { Link } from "react-scroll";
 
 export const Main = styled.div`
   position: relative;
@@ -10,7 +10,6 @@ export const Main = styled.div`
   overflow-x: hidden !important;
   background-color: ${({ theme }) => theme.colors.BgSecondary};
 `;
-
 
 export const ContainerMenu = styled.div`
   z-index: 100;
@@ -33,8 +32,7 @@ export const Menu = styled.ul`
   justify-content: space-around;
 `;
 
-export const MenuOption = styled.li`
-`;
+export const MenuOption = styled.li``;
 
 export const MenuLink = styled(Link)`
   color: ${({ theme }) => theme.colors.TextPrimary};
@@ -44,7 +42,7 @@ export const MenuLink = styled(Link)`
   flex-direction: column-reverse;
   align-items: center;
 
-  &:hover{
+  &:hover {
     cursor: pointer;
     color: ${({ theme }) => theme.colors.Primary};
 
@@ -72,7 +70,10 @@ export const ContainerNavigationRight = styled.div`
   justify-content: center;
   right: 0;
   padding: 30px;
-  
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const CircleNav = styled(Link)`
@@ -84,10 +85,10 @@ export const CircleNav = styled(Link)`
   margin: 6px 0;
   transition: 0.3s ease;
 
-  &:hover{
+  &:hover {
     cursor: pointer;
     background-color: ${({ theme }) => theme.colors.Primary};
-    box-shadow: 0px 0px 10px 5px rgba(19,255,0,0.2);
+    box-shadow: 0px 0px 10px 5px rgba(19, 255, 0, 0.2);
     border: 3px solid ${({ theme }) => theme.colors.Primary};
   }
 `;
@@ -99,7 +100,11 @@ export const SectionHero = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(90deg, ${({ theme }) => theme.colors.BgPrimary} 80%, ${({ theme }) => theme.colors.BgSecondary} 20%);
+  background: linear-gradient(
+    90deg,
+    ${({ theme }) => theme.colors.BgPrimary} 80%,
+    ${({ theme }) => theme.colors.BgSecondary} 20%
+  );
 `;
 
 export const GroupLeftRight = styled.div`
@@ -109,6 +114,10 @@ export const GroupLeftRight = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const ContainerLeft = styled.div`
@@ -125,6 +134,15 @@ export const ContainerLeft = styled.div`
   @media only screen and (max-width: 1440px) {
     width: 45%;
   }
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    min-height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 120px 40px 0 40px;
+    overflow: hidden;
+  }
 `;
 
 export const Name = styled.h2`
@@ -132,11 +150,16 @@ export const Name = styled.h2`
   font-weight: 700;
   margin-bottom: 8px;
   font-size: clamp(20px, 2.2vw, 38px);
+  align-self: flex-start;
+
+  @media only screen and (max-width: 768px) {
+    font-size: clamp(30px, 2.2vw, 38px);
+    margin-top: 20px;
+  }
 `;
 
 export const Line = styled.span`
   width: 75%;
-  
   height: 5px;
   background-color: ${({ theme }) => theme.colors.Primary};
   align-self: flex-end;
@@ -151,7 +174,7 @@ export const TitleMain = styled.h1`
   margin-bottom: 40px;
   font-size: clamp(28px, 2.4vw, 48px);
 
-  &:after{
+  &:after {
     content: "Front-end Developer & UI Designer";
     position: absolute;
     -webkit-text-stroke-width: 1px;
@@ -163,6 +186,11 @@ export const TitleMain = styled.h1`
     opacity: 0.1;
     font-size: clamp(28px, 2.4vw, 48px);
   }
+
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+    top: 28px;
+  }
 `;
 
 export const Description = styled.h5`
@@ -170,6 +198,10 @@ export const Description = styled.h5`
   color: ${({ theme }) => theme.colors.TextSecondary};
   margin-bottom: 32px;
   font-size: clamp(12px, 1.4vw, 20px);
+
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+    margin-top: 16px;
 `;
 
 export const ContainerButtonsMain = styled.div`
@@ -180,6 +212,11 @@ export const ContainerButtonsMain = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 3vw;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const ButtonCV = styled.button`
@@ -196,12 +233,16 @@ export const ButtonCV = styled.button`
   font-size: 18px;
   transition: 0.3s ease;
 
-  &:hover{
+  &:hover {
     cursor: pointer;
     transform: translateY(2px);
   }
   &:active {
     transform: translateY(6px);
+  }
+
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 20px;
   }
 `;
 
@@ -219,12 +260,16 @@ export const ButtonPortfolio = styled(Link)`
   font-weight: 600;
   font-size: 18px;
   transition: 0.3s ease;
-  &:hover{
+  &:hover {
     cursor: pointer;
     transform: translateY(2px);
   }
   &:active {
     transform: translateY(6px);
+  }
+
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 20px;
   }
 `;
 
@@ -247,9 +292,10 @@ export const CircleSocial = styled.a`
   background-color: ${({ theme }) => theme.colors.BgButton};
   padding: 16px;
   border-radius: 50%;
-  opacity: .5;
+  opacity: 0.5;
   transition: 0.3s ease;
-  &:hover{
+
+  &:hover {
     cursor: pointer;
     opacity: 1;
   }
@@ -272,6 +318,10 @@ export const ContainerRight = styled.div`
     width: 55%;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 58vh 100%);
   }
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const ContainerImage = styled.div`
@@ -282,8 +332,7 @@ export const ContainerImage = styled.div`
   margin-left: 5%;
 `;
 
-export const MainImage = styled(Image)`
-`;
+export const MainImage = styled(Image)``;
 
 export const Circle = styled.div`
   z-index: 0;
@@ -293,9 +342,9 @@ export const Circle = styled.div`
   margin-left: -130px;
   border: 6px solid ${({ theme }) => theme.colors.Primary};
   border-radius: 50%;
-  box-shadow: 0px 0px 50px 9px rgba(19,255,0,0.7), rgba(19,255,0,0.7) 0px 0px 50px 9px inset;
+  box-shadow: 0px 0px 50px 9px rgba(19, 255, 0, 0.7),
+    rgba(19, 255, 0, 0.7) 0px 0px 50px 9px inset;
 `;
-
 
 // ----------------------- ABOUT ME -----------------------
 
@@ -325,16 +374,16 @@ export const TitleAbout = styled.h2`
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  &::after{
-  content: '';
-  border-bottom: 4px solid ${({ theme }) => theme.colors.Primary};
-  width: 45px;
-  border-radius: 30px;
-  display: block;
-  position: relative;
-  margin-top: 5px;
-}
+
+  &::after {
+    content: "";
+    border-bottom: 4px solid ${({ theme }) => theme.colors.Primary};
+    width: 45px;
+    border-radius: 30px;
+    display: block;
+    position: relative;
+    margin-top: 5px;
+  }
 `;
 
 export const ContainerDescAbout = styled.div`
@@ -343,8 +392,7 @@ export const ContainerDescAbout = styled.div`
   margin-bottom: 100px;
 `;
 
-export const SquareComponent = styled(Image)`
-`;
+export const SquareComponent = styled(Image)``;
 
 export const TextDescAbout = styled.p`
   color: ${({ theme }) => theme.colors.TextSecondary};
@@ -356,13 +404,12 @@ export const GreenText = styled.b`
   color: ${({ theme }) => theme.colors.Primary};
 `;
 
-export const Jump = styled.br`
-`;
+export const Jump = styled.br``;
 
 export const TireServices = styled.div`
   position: relative;
   width: 100%;
-  background-color: #1D1D1D;
+  background-color: #1d1d1d;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -416,7 +463,7 @@ export const BoxIconTextServices = styled.div`
   @media only screen and (max-width: 1440px) {
     flex-direction: column;
 
-    ${TextServices}{
+    ${TextServices} {
       margin-top: 12px;
     }
   }
@@ -459,7 +506,7 @@ export const TitleEducationJobs = styled.p`
 `;
 
 export const InstitutionEducationJobs = styled.p`
-  color: #C1C1C1;
+  color: #c1c1c1;
   font-weight: 500;
 `;
 
@@ -475,19 +522,19 @@ export const ContainerColumnsEducationJobs = styled.div`
   @media only screen and (max-width: 720px) {
     flex-direction: column;
 
-    ${TitleColumnEducationJobs}{
+    ${TitleColumnEducationJobs} {
       text-align: center;
     }
 
-    ${DateEducationJobs}{
+    ${DateEducationJobs} {
       text-align: center;
     }
 
-    ${TitleEducationJobs}{
+    ${TitleEducationJobs} {
       text-align: center;
     }
 
-    ${InstitutionEducationJobs}{
+    ${InstitutionEducationJobs} {
       text-align: center;
     }
   }
@@ -528,7 +575,6 @@ export const CircleDecorationLeft = styled.div`
   background-color: ${({ theme }) => theme.colors.BgDecoration};
 `;
 
-
 export const TitleProjects = styled(TitleAbout)`
   z-index: 1;
 `;
@@ -542,7 +588,6 @@ export const ContainerProjects = styled.div`
   gap: 4rem;
 `;
 
-
 // ----------------------- CONTACT -----------------------
 
 export const SectionContact = styled.div`
@@ -552,8 +597,8 @@ export const SectionContact = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;  
-  background-color: ${({ theme }) => theme.colors.BgTertiary  }; 
+  justify-content: center;
+  background-color: ${({ theme }) => theme.colors.BgTertiary};
 `;
 
 export const ContainerContact = styled.div`
@@ -598,10 +643,10 @@ export const TitleContactInfo = styled.p`
   font-size: 34px;
   margin-bottom: 80px;
   text-align: left;
-  
+
   &:before {
     position: absolute;
-    content: '';
+    content: "";
     right: 0;
     width: 48%;
     text-align: right;
@@ -643,7 +688,7 @@ export const LinkAction = styled.a`
 
 export const LineContact = styled.span`
   position: absolute;
-  content: '';
+  content: "";
   left: 0;
   width: 48%;
   height: 3px;
@@ -683,7 +728,7 @@ export const FormContact = styled.form`
 `;
 
 export const GroupLabelInput = styled.div`
-  width:  ${(props) => props.width};
+  width: ${(props) => props.width};
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -703,7 +748,7 @@ export const LabelContact = styled.p`
 export const InputContact = styled.input`
   box-sizing: border-box;
   width: 100%;
-  height: ${(props) => props.height || '40px'};
+  height: ${(props) => props.height || "40px"};
   border-radius: 8px;
   padding: 0 16px;
   font-size: 16px;
@@ -720,7 +765,7 @@ export const InputContact = styled.input`
 export const InputContactText = styled.textarea`
   box-sizing: border-box;
   width: 100%;
-  height: ${(props) => props.height || '40px'};
+  height: ${(props) => props.height || "40px"};
   border-radius: 8px;
   padding: 16px;
   font-size: 16px;
@@ -752,7 +797,7 @@ export const ButtonContact = styled.button`
   transition: 0.3s ease;
   line-height: 14px;
 
-  &:hover{
+  &:hover {
     cursor: pointer;
     transform: translateY(2px);
   }
