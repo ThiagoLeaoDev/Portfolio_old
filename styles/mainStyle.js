@@ -22,15 +22,15 @@ export const ContainerMenu = styled.div`
   justify-content: center;
 
   @media only screen and (max-width: 768px) {
-    height: auto;
-    background-color: ${({ theme }) => theme.colors.BgSecondary};
+    height: ${(props) => (props.menuOpen ? "auto" : "80px")};
+    background-color: ${({ theme }) => theme.colors.BgPrimary};
   }
 `;
 
 export const ButtonCloseMenu = styled.div`
   position: absolute;
-  top: 36px;
-  right: 32px;
+  top: 16px;
+  right: 16px;
   padding: 10px;
   height: 30px;
   width: 30px;
@@ -64,14 +64,13 @@ export const Menu = styled.ul`
     height: 100vh;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-around;
-    padding: 60px 15% 300px 15%;
+    justify-content: flex-start;
+    padding: 60px 15% 0 15%;
     box-sizing: border-box;
   }
 `;
 
 export const MenuOption = styled.li`
-
   @media only screen and (max-width: 768px) {
     padding: 10px;
     width: 100%;
@@ -111,7 +110,7 @@ export const MenuLink = styled(Link)`
 
     &:hover {
       &::after {
-      display: none;
+        display: none;
       }
     }
   }
@@ -453,13 +452,11 @@ export const ContainerDescAbout = styled.div`
 `;
 
 export const SquareComponent = styled(Image)`
-
   @media only screen and (max-width: 768px) {
     width: 130px;
     height: 130px;
     opacity: 0.3;
   }
-
 `;
 
 export const TextDescAbout = styled.p`
@@ -901,10 +898,10 @@ export const Footer = styled.footer`
   position: absolute;
   bottom: 0px;
   left: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   background-color: ${({ theme }) => theme.colors.BgPrimary};
   padding: 20px 100px;
