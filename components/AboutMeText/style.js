@@ -5,4 +5,8 @@ export const TextAboutMe = styled.p`
   font-weight: 700;
   font-size: 170px;
   opacity: .1;
+
+  @media (max-width: 768px) {
+    font-size: 150px;
+  }
 `;

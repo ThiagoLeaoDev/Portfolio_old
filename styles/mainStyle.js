@@ -20,19 +20,63 @@ export const ContainerMenu = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (max-width: 768px) {
+    height: auto;
+    background-color: ${({ theme }) => theme.colors.BgSecondary};
+  }
+`;
+
+export const ButtonCloseMenu = styled.div`
+  position: absolute;
+  top: 36px;
+  right: 32px;
+  padding: 10px;
+  height: 30px;
+  width: 30px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.BgPrimary};
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width: 768px) {
+    display: flex;
+  }
 `;
 
 export const Menu = styled.ul`
-  z-index: 100;
+  z-index: 99;
   height: 100%;
   width: 500px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+
+  @media only screen and (max-width: 768px) {
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 60px 15% 300px 15%;
+    box-sizing: border-box;
+  }
 `;
 
-export const MenuOption = styled.li``;
+export const MenuOption = styled.li`
+
+  @media only screen and (max-width: 768px) {
+    padding: 10px;
+    width: 100%;
+  }
+`;
 
 export const MenuLink = styled(Link)`
   color: ${({ theme }) => theme.colors.TextPrimary};
@@ -55,6 +99,20 @@ export const MenuLink = styled(Link)`
       border-radius: 50%;
       margin-top: -8px;
       background-color: ${({ theme }) => theme.colors.Primary};
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+
+    &:hover {
+      &::after {
+      display: none;
+      }
     }
   }
 `;
@@ -130,6 +188,7 @@ export const ContainerLeft = styled.div`
   padding: 120px 80px 0 80px;
   box-sizing: border-box;
   background-color: ${({ theme }) => theme.colors.BgPrimary};
+  overflow-y: hidden;
 
   @media only screen and (max-width: 1440px) {
     width: 45%;
@@ -140,7 +199,7 @@ export const ContainerLeft = styled.div`
     min-height: 100%;
     align-items: center;
     justify-content: flex-start;
-    padding: 120px 40px 0 40px;
+    padding: 120px 20% 0 20%;
     overflow: hidden;
   }
 `;
@@ -202,6 +261,7 @@ export const Description = styled.h5`
   @media only screen and (max-width: 768px) {
     text-align: center;
     margin-top: 16px;
+  }
 `;
 
 export const ContainerButtonsMain = styled.div`
@@ -219,7 +279,7 @@ export const ContainerButtonsMain = styled.div`
   }
 `;
 
-export const ButtonCV = styled.button`
+export const ButtonCV = styled.a`
   width: 174px;
   display: flex;
   flex-direction: row;
@@ -392,7 +452,15 @@ export const ContainerDescAbout = styled.div`
   margin-bottom: 100px;
 `;
 
-export const SquareComponent = styled(Image)``;
+export const SquareComponent = styled(Image)`
+
+  @media only screen and (max-width: 768px) {
+    width: 130px;
+    height: 130px;
+    opacity: 0.3;
+  }
+
+`;
 
 export const TextDescAbout = styled.p`
   color: ${({ theme }) => theme.colors.TextSecondary};
@@ -551,6 +619,11 @@ export const SectionProjects = styled.div`
   align-items: center;
   background-color: ${({ theme }) => theme.colors.BgPrimary};
   padding-bottom: 30px;
+  margin-bottom: 40px;
+
+  @media only screen and (max-width: 768px) {
+    min-height: 100vh;
+  }
 `;
 
 export const CircleDecoration = styled.div`
@@ -586,6 +659,7 @@ export const ContainerProjects = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(342px, 1fr));
   gap: 4rem;
+  padding-bottom: 48px;
 `;
 
 // ----------------------- CONTACT -----------------------
@@ -599,6 +673,7 @@ export const SectionContact = styled.div`
   align-items: center;
   justify-content: center;
   background-color: ${({ theme }) => theme.colors.BgTertiary};
+  margin-top: 40px;
 `;
 
 export const ContainerContact = styled.div`
@@ -613,6 +688,7 @@ export const ContainerContact = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
+    height: 100%;
   }
 `;
 
@@ -709,9 +785,15 @@ export const ContainerContactForm = styled.div`
   background-color: ${({ theme }) => theme.colors.BgPrimary};
   border-top-right-radius: 33px;
   border-bottom-right-radius: 33px;
+
+  @media (max-width: 768px) {
+    height: auto;
+    align-items: center;
+  }
 `;
 
 export const FormContact = styled.form`
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -723,6 +805,7 @@ export const FormContact = styled.form`
 
   @media (max-width: 768px) {
     flex-direction: column;
+    align-items: center;
     padding: 0;
   }
 `;
@@ -747,7 +830,7 @@ export const LabelContact = styled.p`
 
 export const InputContact = styled.input`
   box-sizing: border-box;
-  width: 100%;
+  width: 90%;
   height: ${(props) => props.height || "40px"};
   border-radius: 8px;
   padding: 0 16px;
@@ -816,11 +899,12 @@ export const ContainerButton = styled.div`
 
 export const Footer = styled.footer`
   position: absolute;
-  bottom: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  bottom: 0px;
+  left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   width: 100%;
   background-color: ${({ theme }) => theme.colors.BgPrimary};
   padding: 20px 100px;

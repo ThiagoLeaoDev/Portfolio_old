@@ -6,6 +6,8 @@ import {
   HiOutlinePhone,
   HiOutlineMail,
   HiOutlineLocationMarker,
+  HiX,
+  HiMenuAlt3,
 } from "react-icons/hi";
 import { FaLinkedinIn, FaGithub, FaDribbble, FaFigma } from "react-icons/fa";
 import { BiCodeBlock, BiLayout, BiMobile, BiRocket } from "react-icons/bi";
@@ -19,31 +21,44 @@ import ContactForm from "../components/contactForm.js";
 import projects from "./projects.json";
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <SC.Main>
-      <SC.ContainerMenu>
-        <SC.Menu>
-          <SC.MenuOption>
-            <SC.MenuLink to="home" spy={true} smooth={true}>
-              Home
-            </SC.MenuLink>
-          </SC.MenuOption>
-          <SC.MenuOption>
-            <SC.MenuLink to="about" spy={true} smooth={true}>
-              Bio
-            </SC.MenuLink>
-          </SC.MenuOption>
-          <SC.MenuOption>
-            <SC.MenuLink to="projects" spy={true} smooth={true}>
-              Projects
-            </SC.MenuLink>
-          </SC.MenuOption>
-          <SC.MenuOption>
-            <SC.MenuLink to="contact" spy={true} smooth={true}>
-              Contact
-            </SC.MenuLink>
-          </SC.MenuOption>
-        </SC.Menu>
+      <SC.ContainerMenu menuOpen={isOpen}>
+        {isOpen ? (
+          <>
+            <SC.ButtonCloseMenu onClick={() => setIsOpen(!isOpen)}>
+              <HiX color="white" size="1.8em" />
+            </SC.ButtonCloseMenu>
+            <SC.Menu>
+              <SC.MenuOption>
+                <SC.MenuLink to="home" spy={true} smooth={true} onClick={() => setIsOpen(false)}>
+                  Home
+                </SC.MenuLink>
+              </SC.MenuOption>
+              <SC.MenuOption>
+                <SC.MenuLink to="about" spy={true} smooth={true} onClick={() => setIsOpen(false)}>
+                  Bio
+                </SC.MenuLink>
+              </SC.MenuOption>
+              <SC.MenuOption>
+                <SC.MenuLink to="projects" spy={true} smooth={true} onClick={() => setIsOpen(false)}>
+                  Projects
+                </SC.MenuLink>
+              </SC.MenuOption>
+              <SC.MenuOption>
+                <SC.MenuLink to="contact" spy={true} smooth={true} onClick={() => setIsOpen(false)}>
+                  Contact
+                </SC.MenuLink>
+              </SC.MenuOption>
+            </SC.Menu>
+          </>
+        ) : (
+          <SC.ButtonCloseMenu onClick={() => setIsOpen(!isOpen)}>
+            <HiMenuAlt3 color="white" size="1.8em" />
+          </SC.ButtonCloseMenu>
+        )}
       </SC.ContainerMenu>
       <SC.ContainerNavigationRight>
         <SC.CircleNav to="home" spy={true} smooth={true} />
@@ -64,7 +79,7 @@ export default function Home() {
               problems.
             </SC.Description>
             <SC.ContainerButtonsMain>
-              <SC.ButtonCV>
+              <SC.ButtonCV href="/curriculo.pdf" download="resume_Thiago_Leao">
                 <MdOutlineCloudDownload color="white" size="1.8em" />
                 Download CV
               </SC.ButtonCV>
@@ -74,16 +89,28 @@ export default function Home() {
               </SC.ButtonPortfolio>
             </SC.ContainerButtonsMain>
             <SC.ContainerSocial>
-              <SC.CircleSocial>
+              <SC.CircleSocial
+                href="https://www.linkedin.com/in/thiagoleaodev/"
+                target="_blank"
+              >
                 <FaLinkedinIn color="white" size="1.8em" />
               </SC.CircleSocial>
-              <SC.CircleSocial>
+              <SC.CircleSocial
+                href="https://github.com/ThiagoLeaoDev"
+                target="_blank"
+              >
                 <FaGithub color="white" size="1.8em" />
               </SC.CircleSocial>
-              <SC.CircleSocial>
+              <SC.CircleSocial
+                href="https://dribbble.com/thiagoLeao"
+                target="_blank"
+              >
                 <FaDribbble color="white" size="1.8em" />
               </SC.CircleSocial>
-              <SC.CircleSocial>
+              <SC.CircleSocial
+                href="https://www.figma.com/@thiagoleao"
+                target="_blank"
+              >
                 <FaFigma color="white" size="1.8em" />
               </SC.CircleSocial>
             </SC.ContainerSocial>
@@ -294,12 +321,10 @@ export default function Home() {
             </SC.ContainerContactForm>
           </SC.ContainerContact>
         </SC.Content>
-        <SC.Footer>
-          <SC.TextFooter>
-            © 2022 Thiago Leão. All rights reserved.
-          </SC.TextFooter>
-        </SC.Footer>
       </SC.SectionContact>
+      <SC.Footer>
+        <SC.TextFooter>© 2022 Thiago Leão. All rights reserved.</SC.TextFooter>
+      </SC.Footer>
     </SC.Main>
   );
 }
