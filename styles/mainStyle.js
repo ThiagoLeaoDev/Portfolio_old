@@ -195,7 +195,6 @@ export const ContainerLeft = styled.div`
 
   @media only screen and (max-width: 768px) {
     width: 100%;
-    min-height: 100%;
     align-items: center;
     justify-content: flex-start;
     padding: 120px 20% 0 20%;
@@ -358,6 +357,10 @@ export const CircleSocial = styled.a`
     cursor: pointer;
     opacity: 1;
   }
+
+  @media screen and (max-width: 768px) {
+    padding: 10px;
+  }
 `;
 
 export const ContainerRight = styled.div`
@@ -417,11 +420,14 @@ export const SectionAbout = styled.div`
 `;
 
 export const Content = styled.div`
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 1920px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 `;
 
 export const TitleAbout = styled.h2`
@@ -514,6 +520,10 @@ export const TextServices = styled.p`
   margin-left: 8px;
   font-size: 20px;
   font-weight: 500;
+
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 export const BoxIconTextServices = styled.div`
@@ -616,7 +626,6 @@ export const SectionProjects = styled.div`
   align-items: center;
   background-color: ${({ theme }) => theme.colors.BgPrimary};
   padding-bottom: 30px;
-  margin-bottom: 40px;
 
   @media only screen and (max-width: 768px) {
     min-height: 100vh;
@@ -632,6 +641,13 @@ export const CircleDecoration = styled.div`
   height: 900px;
   border-radius: 50%;
   background-color: ${({ theme }) => theme.colors.BgDecoration};
+
+  @media only screen and (max-width: 768px) {
+    top: -100px;
+    right: -200px;
+    width: 400px;
+    height: 400px;
+  }
 `;
 
 export const CircleDecorationLeft = styled.div`
@@ -643,6 +659,13 @@ export const CircleDecorationLeft = styled.div`
   height: 900px;
   border-radius: 50%;
   background-color: ${({ theme }) => theme.colors.BgDecoration};
+
+  @media only screen and (max-width: 768px) {
+    left: -200px;
+    bottom: -100px;
+    width: 400px;
+    height: 400px;
+  }
 `;
 
 export const TitleProjects = styled(TitleAbout)`
@@ -656,7 +679,8 @@ export const ContainerProjects = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(342px, 1fr));
   gap: 4rem;
-  padding-bottom: 48px;
+  padding: 0 32px 48px 32px;
+  box-sizing: border-box;
 `;
 
 // ----------------------- CONTACT -----------------------
@@ -664,19 +688,21 @@ export const ContainerProjects = styled.div`
 export const SectionContact = styled.div`
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: ${({ theme }) => theme.colors.BgTertiary};
-  margin-top: 40px;
+  margin-top: 0;
+  padding: 60px 0;
 `;
 
 export const ContainerContact = styled.div`
+  position: relative;
   width: 90%;
   max-width: 1920px;
-  height: 300px;
+  height: 800px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -685,22 +711,34 @@ export const ContainerContact = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    height: 100%;
+    height: auto;
   }
 `;
 
 export const ContainerContactInfo = styled.div`
   position: relative;
   max-width: 605px;
+  min-height: 100%;
   height: 100%;
-  padding: 94px 100px 170px 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 0 100px 0 100px;
   background-color: ${({ theme }) => theme.colors.BgCard};
   border-top-left-radius: 33px;
   border-bottom-left-radius: 33px;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    width: 100vw;
+    max-width: 100vw;
+    min-height: 70vh;
+    height: auto;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
 `;
 
 export const GroupContactInfo = styled.div`
@@ -708,6 +746,11 @@ export const GroupContactInfo = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  margin-top: -100px;
+
+  @media (max-width: 768px) {
+    margin-top: 0;
+  }
 `;
 
 export const TitleContactInfo = styled.p`
@@ -727,6 +770,10 @@ export const TitleContactInfo = styled.p`
     margin-top: 25px;
     background-color: ${({ theme }) => theme.colors.TextPrimary};
     margin-bottom: 20px;
+
+    @media (max-width: 768px) {
+      width: 42%;
+    }
   }
 `;
 
@@ -747,6 +794,10 @@ export const TextContactInfo = styled.p`
   margin-left: 24px;
   font-size: 20px;
   font-weight: 500;
+  
+  @media only screen and (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const LinkAction = styled.a`
@@ -768,9 +819,14 @@ export const LineContact = styled.span`
   bottom: 94px;
   background-color: ${({ theme }) => theme.colors.TextPrimary};
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const ContainerContactForm = styled.div`
+  position: relative;
   max-width: 831px;
   width: 100%;
   height: 100%;
@@ -778,7 +834,7 @@ export const ContainerContactForm = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 132px 50px;
+  padding: 0 50px;
   background-color: ${({ theme }) => theme.colors.BgPrimary};
   border-top-right-radius: 33px;
   border-bottom-right-radius: 33px;
@@ -786,6 +842,7 @@ export const ContainerContactForm = styled.div`
   @media (max-width: 768px) {
     height: auto;
     align-items: center;
+    padding: 70px;
   }
 `;
 
@@ -802,13 +859,13 @@ export const FormContact = styled.form`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    align-items: center;
     padding: 0;
   }
 `;
 
 export const GroupLabelInput = styled.div`
   width: ${(props) => props.width};
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -895,7 +952,6 @@ export const ContainerButton = styled.div`
 `;
 
 export const Footer = styled.footer`
-  position: absolute;
   bottom: 0px;
   left: 0;
   display: flex;

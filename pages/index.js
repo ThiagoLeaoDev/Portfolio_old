@@ -33,22 +33,42 @@ export default function Home() {
             </SC.ButtonCloseMenu>
             <SC.Menu>
               <SC.MenuOption>
-                <SC.MenuLink to="home" spy={true} smooth={true} onClick={() => setIsOpen(false)}>
+                <SC.MenuLink
+                  to="home"
+                  spy={true}
+                  smooth={true}
+                  onClick={() => setIsOpen(false)}
+                >
                   Home
                 </SC.MenuLink>
               </SC.MenuOption>
               <SC.MenuOption>
-                <SC.MenuLink to="about" spy={true} smooth={true} onClick={() => setIsOpen(false)}>
+                <SC.MenuLink
+                  to="about"
+                  spy={true}
+                  smooth={true}
+                  onClick={() => setIsOpen(false)}
+                >
                   Bio
                 </SC.MenuLink>
               </SC.MenuOption>
               <SC.MenuOption>
-                <SC.MenuLink to="projects" spy={true} smooth={true} onClick={() => setIsOpen(false)}>
+                <SC.MenuLink
+                  to="projects"
+                  spy={true}
+                  smooth={true}
+                  onClick={() => setIsOpen(false)}
+                >
                   Projects
                 </SC.MenuLink>
               </SC.MenuOption>
               <SC.MenuOption>
-                <SC.MenuLink to="contact" spy={true} smooth={true} onClick={() => setIsOpen(false)}>
+                <SC.MenuLink
+                  to="contact"
+                  spy={true}
+                  smooth={true}
+                  onClick={() => setIsOpen(false)}
+                >
                   Contact
                 </SC.MenuLink>
               </SC.MenuOption>
@@ -289,7 +309,7 @@ export default function Home() {
                 <SC.TitleContactInfo>CONTACT</SC.TitleContactInfo>
                 <SC.ContainerContactInfoItem>
                   <HiOutlinePhone color="#FFFFFF" size="1.8em" />
-                  <SC.TextContactInfo>+55 (11) 99999-9999</SC.TextContactInfo>
+                  <SC.TextContactInfo>+55 (13) 97415-4802</SC.TextContactInfo>
                 </SC.ContainerContactInfoItem>
                 <SC.ContainerContactInfoItem>
                   <HiOutlineMail color="#FFFFFF" size="1.8em" />
