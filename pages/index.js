@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Head from 'next/head'
 
 import { MdOutlineCloudDownload } from "react-icons/md";
 import { CgChevronDoubleDownO } from "react-icons/cg";
@@ -25,6 +26,10 @@ export default function Home() {
 
   return (
     <SC.Main>
+      <Head>
+        <title>Thiago Leão | Portfolio</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <SC.ContainerMenu menuOpen={isOpen}>
         {isOpen ? (
           <>
@@ -112,24 +117,28 @@ export default function Home() {
               <SC.CircleSocial
                 href="https://www.linkedin.com/in/thiagoleaodev/"
                 target="_blank"
+                aria-label="Linkedin"
               >
                 <FaLinkedinIn color="white" size="1.8em" />
               </SC.CircleSocial>
               <SC.CircleSocial
                 href="https://github.com/ThiagoLeaoDev"
                 target="_blank"
+                aria-label="Github"
               >
                 <FaGithub color="white" size="1.8em" />
               </SC.CircleSocial>
               <SC.CircleSocial
                 href="https://dribbble.com/thiagoLeao"
                 target="_blank"
+                aria-label="Dribbble"
               >
                 <FaDribbble color="white" size="1.8em" />
               </SC.CircleSocial>
               <SC.CircleSocial
                 href="https://www.figma.com/@thiagoleao"
                 target="_blank"
+                aria-label="Figma"
               >
                 <FaFigma color="white" size="1.8em" />
               </SC.CircleSocial>
@@ -142,7 +151,7 @@ export default function Home() {
                 layout="fill"
                 objectFit="cover"
                 quality={100}
-                alt="Portfolio"
+                alt="Portait of Thiago Leão"
               />
               <SC.Circle />
             </SC.ContainerImage>
@@ -186,6 +195,7 @@ export default function Home() {
               width={186}
               height={186}
               quality={100}
+              alt="Square"
             />
           </SC.ContainerComponentAbout>
           <SC.Content>

@@ -271,6 +271,10 @@ export const ContainerButtonsMain = styled.div`
   flex-wrap: wrap;
   margin-bottom: 3vw;
 
+  @media only screen and (max-width: 980px) {
+    width: 100%;
+  }
+
   @media only screen and (max-width: 768px) {
     flex-direction: column;
     align-items: center;
@@ -357,6 +361,11 @@ export const CircleSocial = styled.a`
     cursor: pointer;
     opacity: 1;
   }
+
+  @media screen and (max-width: 980px) {
+    padding: 12px;
+  }
+
 
   @media screen and (max-width: 768px) {
     padding: 10px;
@@ -874,7 +883,7 @@ export const GroupLabelInput = styled.div`
   margin-bottom: 40px;
 `;
 
-export const LabelContact = styled.p`
+export const LabelContact = styled.label`
   color: ${({ theme }) => theme.colors.TextTertiary};
   font-weight: 500;
   font-size: 16px;
