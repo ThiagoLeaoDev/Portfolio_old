@@ -8,7 +8,11 @@ export default function index(props) {
 
   useEffect(() => {
     const getProjects = async () => {
-      const {data: res} = await axios.get("https://api.figma.com/v1/files/" + process.env.FIGMA_KEY);
+      const {data: res} = await axios.get("https://api.figma.com/v1/files/", {
+        headers: {
+          "X-Figma-Token": process.env.FIGMA_KEY
+          }
+          });
       setProjects(res)
     }
     getProjects();
