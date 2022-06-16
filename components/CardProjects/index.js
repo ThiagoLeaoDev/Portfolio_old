@@ -10,8 +10,8 @@ export default function index(props) {
     const getProjects = async () => {
       const {data: res} = await axios.get("https://api.figma.com/v1/files/", {
         headers: {
-          "X-Figma-Token": process.env.FIGMA_KEY
-          }
+          authorization: `Bearer ${process.env.FIGMA_KEY}`
+        }
           });
       setProjects(res)
     }
