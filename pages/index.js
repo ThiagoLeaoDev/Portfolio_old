@@ -21,7 +21,7 @@ import ContactForm from "../components/contactForm.js";
 
 import projects from "./projects.json";
 
-export default function Home() {
+export default function Home(data) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

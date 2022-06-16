@@ -1,7 +1,21 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import * as SC from './style'
 import { BiLayout, BiCodeBlock, BiMobile, BiRocket } from "react-icons/bi";
 
 export default function index(props) {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const getProjects = async () => {
+      const {data: res} = await axios.get("https://api.figma.com/v1/files/" + process.env.FIGMA_KEY);
+      setProjects(res)
+    }
+    getProjects();
+    console.log(projects);
+  }
+  , []);
+  
   return (
     <SC.ContainerCard>
       <SC.ContainerImage>
