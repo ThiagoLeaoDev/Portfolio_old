@@ -5,7 +5,7 @@ export default function index(props) {
   return (
     <SC.ContainerCard>
       <SC.ContainerImage>
-        <SC.ProjectImage src={props.image} layout='fill' objectFit="cover" quality={100}/>
+        <SC.ProjectImage src={props.image} alt='Project Image' layout='fill' objectFit="cover" quality={100}/>
       </SC.ContainerImage>
 
       <SC.CardText>

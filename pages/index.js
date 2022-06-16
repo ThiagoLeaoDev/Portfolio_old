@@ -28,7 +28,7 @@ export default function Home() {
     <SC.Main>
       <Head>
         <title>Thiago Leão | Portfolio</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Portfolio of Thiago Leão, Front-end Developer and UI Designer" />
       </Head>
       <SC.ContainerMenu menuOpen={isOpen}>
         {isOpen ? (
@@ -152,6 +152,7 @@ export default function Home() {
                 objectFit="cover"
                 quality={100}
                 alt="Portait of Thiago Leão"
+                priority
               />
               <SC.Circle />
             </SC.ContainerImage>
@@ -225,6 +226,7 @@ export default function Home() {
               width={186}
               height={186}
               quality={100}
+              alt="Square"
             />
           </SC.ContainerComponentAbout>
         </SC.TireServices>
@@ -239,10 +241,10 @@ export default function Home() {
                   January 2020 - December 2023
                 </SC.DateEducationJobs>
                 <SC.TitleEducationJobs>
-                  Sistemas de informação
+                  Information Systems
                 </SC.TitleEducationJobs>
                 <SC.InstitutionEducationJobs>
-                  Universidade Santa Cecília
+                  Santa Cecilia University
                 </SC.InstitutionEducationJobs>
               </SC.BoxInfoEducationJobs>
               <SC.BoxInfoEducationJobs>
@@ -250,10 +252,10 @@ export default function Home() {
                   August 2018 - December 2019
                 </SC.DateEducationJobs>
                 <SC.TitleEducationJobs>
-                  Sistemas de informação
+                  Systems Development
                 </SC.TitleEducationJobs>
                 <SC.InstitutionEducationJobs>
-                  Universidade Santa Cecília
+                  ETEC Doctor Ruth Cardoso
                 </SC.InstitutionEducationJobs>
               </SC.BoxInfoEducationJobs>
             </SC.ColumnEducationJobs>
@@ -262,25 +264,25 @@ export default function Home() {
               <SC.TitleColumnEducationJobs>Jobs</SC.TitleColumnEducationJobs>
               <SC.BoxInfoEducationJobs>
                 <SC.DateEducationJobs>
-                  January 2020 - December 2023
+                  Octuber 2021 - January 2022
                 </SC.DateEducationJobs>
                 <SC.TitleEducationJobs>
-                  Sistemas de informação
+                  Front-end Developer
                 </SC.TitleEducationJobs>
                 <SC.InstitutionEducationJobs>
-                  Universidade Santa Cecília
+                  Criando Valor - Tecnologia & Inovação
                 </SC.InstitutionEducationJobs>
               </SC.BoxInfoEducationJobs>
 
               <SC.BoxInfoEducationJobs>
                 <SC.DateEducationJobs>
-                  January 2020 - December 2023
+                  September 2020 - August 2021
                 </SC.DateEducationJobs>
                 <SC.TitleEducationJobs>
-                  Sistemas de informação
+                  Front-end Developer
                 </SC.TitleEducationJobs>
                 <SC.InstitutionEducationJobs>
-                  Universidade Santa Cecília
+                  Agência Mandarin
                 </SC.InstitutionEducationJobs>
               </SC.BoxInfoEducationJobs>
             </SC.ColumnEducationJobs>

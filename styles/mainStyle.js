@@ -250,7 +250,9 @@ export const TitleMain = styled.h1`
   }
 `;
 
-export const Description = styled.h5`
+export const Description = styled.p`
+  font-size: 20px;
+  line-height: 140%;
   font-weight: 500;
   color: ${({ theme }) => theme.colors.TextSecondary};
   margin-bottom: 32px;
