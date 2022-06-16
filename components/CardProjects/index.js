@@ -8,7 +8,7 @@ export default function index(props) {
 
   useEffect(() => {
     const getProjects = async () => {
-      const { data: res } = await axios
+      const res = await axios
         .get("https://api.figma.com/v1/files/", {
           headers: {
             Authorization: `token ${process.env.FIGMA_KEY}`,
