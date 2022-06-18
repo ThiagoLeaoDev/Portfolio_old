@@ -49,9 +49,8 @@ export default function Home() {
           console.log(err);
         });
     });
+    
   }, []);
-
-  console.log(projects);
 
   const [isOpen, setIsOpen] = useState(false);
 

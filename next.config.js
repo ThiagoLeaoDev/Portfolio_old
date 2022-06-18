@@ -6,4 +6,8 @@ module.exports = {
   images: {
     domains: ['s3-alpha-sig.figma.com'],
   },
+  reactStrictMode: true,
+  env: {
+    FIGMA_KEY: process.env.FIGMA_KEY,
+  }
 };
