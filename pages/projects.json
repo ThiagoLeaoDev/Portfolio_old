@@ -1,43 +1,9 @@
-[
-  {
-    "title": "Portfolio Website UI",
-    "type": "ui",
-    "image": "/project_image.png"
-  },
-  {
-    "title": "Marketplace",
-    "type": "code",
-    "image": "/project_image.png"
-  },
-  {
-    "title": "Landing Page Builder",
-    "type": "code",
-    "image": "/project_image.png"
-  },
-  {
-    "title": "Ecommerce Website",
-    "type": "code",
-    "image": "/project_image.png"
-  },
-    {
-    "title": "Portfolio Website UI",
-    "type": "ui",
-    "image": "/project_image.png"
-  },
-  {
-    "title": "Marketplace",
-    "type": "code",
-    "image": "/project_image.png"
-  },
-  {
-    "title": "Landing Page Builder",
-    "type": "code",
-    "image": "/project_image.png"
-  },
-  {
-    "title": "Ecommerce Website",
-    "type": "code",
-    "image": "/project_image.png"
-  }
-
-]
+{
+  "figma": [
+    { "id": "x5U6lViStCMEg8f2DVXD8j" },
+    { "id": "yeaRYntBTbsBDTCBsgSoZG" },
+    { "id": "xYVrkedW7v5I9KI6PyZkuP" },
+    { "id": "ECC4q0QRcbu8UZo7HnD13k" },
+    { "id": "gVDAPeef8D4w1WwyDHH5Pc" }
+  ]
+}

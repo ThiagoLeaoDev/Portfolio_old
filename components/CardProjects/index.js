@@ -1,31 +1,7 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
 import * as SC from "./style";
 import { BiLayout, BiCodeBlock, BiMobile, BiRocket } from "react-icons/bi";
 
 export default function index(props) {
-  const [projects, setProjects] = useState([]);
-
-  useEffect(() => {
-    const getProjects = async () => {
-      const res = await axios
-        .get("https://api.figma.com/v1/files/", {
-          headers: {
-            Authorization: `token ${process.env.FIGMA_KEY}`,
-          },
-        })
-        .then((res) => {
-          console.log(res.data);
-          setProjects(res);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    };
-    getProjects();
-    console.log(projects);
-  }, []);
-
   return (
     <SC.ContainerCard>
       <SC.ContainerImage>
@@ -65,13 +41,21 @@ export default function index(props) {
       </SC.CardText>
 
       <SC.ContainerButtons>
-        <SC.ButtonView>
-          <SC.ButtonTextView>View Code</SC.ButtonTextView>
-          <SC.ArrowIcon size="1.5em" color="#FFFFFF" />
-        </SC.ButtonView>
-        <SC.ButtonLive>
-          <SC.ButtonTextLive>Live Preview</SC.ButtonTextLive>
-        </SC.ButtonLive>
+        {props.Type == "ui" || props.Type == "social" ? (
+          <SC.ButtonLive href={"https://www.figma.com/file/" + props.id} target="_blank">
+            <SC.ButtonTextLive>See Project</SC.ButtonTextLive>
+          </SC.ButtonLive>
+        ) : (
+          <>
+            <SC.ButtonView target="_blank">
+              <SC.ButtonTextView>View Code</SC.ButtonTextView>
+              <SC.ArrowIcon size="1.5em" color="#FFFFFF" />
+            </SC.ButtonView>
+            <SC.ButtonLive target="_blank">
+              <SC.ButtonTextLive>Live Preview</SC.ButtonTextLive>
+            </SC.ButtonLive>
+          </>
+        )}
       </SC.ContainerButtons>
     </SC.ContainerCard>
   );

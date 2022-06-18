@@ -1,5 +1,7 @@
-import { useState } from "react";
-import Head from 'next/head'
+import { useState, useEffect } from "react";
+import Head from "next/head";
+
+import axios from "axios";
 
 import { MdOutlineCloudDownload } from "react-icons/md";
 import { CgChevronDoubleDownO } from "react-icons/cg";
@@ -19,16 +21,48 @@ import AboutMeText from "../components/AboutMeText";
 import CardProjects from "../components/CardProjects";
 import ContactForm from "../components/contactForm.js";
 
-import projects from "./projects.json";
+import data from "./projects.json";
 
-export default function Home(data) {
+export default function Home() {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    data.figma.map((figma_project) => {
+      axios
+        .get("https://api.figma.com/v1/files/" + figma_project.id, {
+          headers: {
+            "X-Figma-Token": process.env.FIGMA_KEY,
+          },
+        })
+        .then((res) => {
+          setProjects((prev) => [
+            ...prev,
+            {
+              id: figma_project.id,
+              title: res.data.name,
+              image: res.data.thumbnailUrl,
+              type: "ui"
+            },
+          ]);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    });
+  }, []);
+
+  console.log(projects);
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <SC.Main>
       <Head>
         <title>Thiago Leão | Portfolio</title>
-        <meta name="description" content="Portfolio of Thiago Leão, Front-end Developer and UI Designer" />
+        <meta
+          name="description"
+          content="Portfolio of Thiago Leão, Front-end Developer and UI Designer"
+        />
       </Head>
       <SC.ContainerMenu menuOpen={isOpen}>
         {isOpen ? (
@@ -302,6 +336,7 @@ export default function Home(data) {
               return (
                 <CardProjects
                   key={index}
+                  id={project.id}
                   image={project.image}
                   Title={project.title}
                   Type={project.type}

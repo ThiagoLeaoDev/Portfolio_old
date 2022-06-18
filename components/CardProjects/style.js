@@ -97,7 +97,7 @@ export const ButtonView = styled.div`
   }
 `;
 
-export const ButtonLive = styled.div`
+export const ButtonLive = styled.a`
   display: flex;
   flex-direction: row;
   align-items: center;
