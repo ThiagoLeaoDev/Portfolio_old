@@ -11,7 +11,7 @@ export default function contactForm() {
 
     emailjs
       .sendForm(
-        "service_907cqgt",
+        process.env.EMAILJS_KEY,
         "template_irpyxzu",
         e.target,
         "N0sHBKiPSRBMP7N-1"
