@@ -9,5 +9,6 @@ module.exports = {
   reactStrictMode: true,
   env: {
     FIGMA_KEY: process.env.FIGMA_KEY,
+    EMAILJS_KEY: process.env.EMAILJS_KEY,
   }
 };
