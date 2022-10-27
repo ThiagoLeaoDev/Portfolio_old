@@ -202,7 +202,7 @@ export default function Home() {
           <SC.ContainerDescAbout>
             <SC.TextDescAbout>
               I'm <SC.GreenText>Thiago Leão</SC.GreenText>, I'm{" "}
-              <SC.GreenText>20</SC.GreenText> years old and I live in{" "}
+              <SC.GreenText>21</SC.GreenText> years old and I live in{" "}
               <SC.GreenText>São Vicente-SP</SC.GreenText>.
               <SC.GreenText> Front-end developer</SC.GreenText> and{" "}
               <SC.GreenText>UI Designer</SC.GreenText>, I'm passionate about
