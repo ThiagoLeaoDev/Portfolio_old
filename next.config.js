@@ -1,14 +1,10 @@
 module.exports = {
   i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
+    locales: ['en'],
+    defaultLocale: 'en',
   },
   images: {
-    domains: ['s3-alpha-sig.figma.com'],
+    domains: ['s3-alpha.figma.com'],
   },
   reactStrictMode: true,
-  env: {
-    FIGMA_KEY: process.env.FIGMA_KEY,
-    EMAILJS_KEY: process.env.EMAILJS_KEY,
-  }
 };

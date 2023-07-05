@@ -1,55 +1,38 @@
-import { useState, useEffect } from "react";
-import Head from "next/head";
+import { useState, useEffect } from 'react';
+import Head from 'next/head';
 
-import axios from "axios";
+import axios from 'axios';
 
-import { MdOutlineCloudDownload } from "react-icons/md";
-import { CgChevronDoubleDownO } from "react-icons/cg";
+import { MdOutlineCloudDownload } from 'react-icons/md';
+import { CgChevronDoubleDownO } from 'react-icons/cg';
 import {
   HiOutlinePhone,
   HiOutlineMail,
   HiOutlineLocationMarker,
   HiX,
   HiMenuAlt3,
-} from "react-icons/hi";
-import { FaLinkedinIn, FaGithub, FaDribbble, FaFigma } from "react-icons/fa";
-import { BiCodeBlock, BiLayout, BiMobile, BiRocket } from "react-icons/bi";
+} from 'react-icons/hi';
+import { FaLinkedinIn, FaGithub, FaDribbble, FaFigma } from 'react-icons/fa';
+import { BiCodeBlock, BiLayout, BiMobile, BiRocket } from 'react-icons/bi';
 
-import * as SC from "../styles/mainStyle";
+import * as SC from '../styles/mainStyle';
 
-import AboutMeText from "../components/AboutMeText";
-import CardProjects from "../components/CardProjects";
-import ContactForm from "../components/contactForm.js";
+import AboutMeText from '../components/AboutMeText';
+import CardProjects from '../components/CardProjects';
+import ContactForm from '../components/contactForm.js';
 
-import data from "./projects.json";
+import { getFigmaProjects } from '../services/getProjects';
 
 export default function Home() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    data.figma.map((figma_project) => {
-      axios
-        .get("https://api.figma.com/v1/files/" + figma_project.id, {
-          headers: {
-            "X-Figma-Token": process.env.FIGMA_KEY,
-          },
-        })
-        .then((res) => {
-          setProjects((prev) => [
-            ...prev,
-            {
-              id: figma_project.id,
-              title: res.data.name,
-              image: res.data.thumbnailUrl,
-              type: "ui"
-            },
-          ]);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    });
-    
+    const fetchFigmaProjects = async () => {
+      const data = await getFigmaProjects();
+      setProjects(data);
+    };
+
+    fetchFigmaProjects();
   }, []);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -71,22 +54,12 @@ export default function Home() {
             </SC.ButtonCloseMenu>
             <SC.Menu>
               <SC.MenuOption>
-                <SC.MenuLink
-                  to="home"
-                  spy={true}
-                  smooth={true}
-                  onClick={() => setIsOpen(false)}
-                >
+                <SC.MenuLink to="home" spy={true} smooth={true} onClick={() => setIsOpen(false)}>
                   Home
                 </SC.MenuLink>
               </SC.MenuOption>
               <SC.MenuOption>
-                <SC.MenuLink
-                  to="about"
-                  spy={true}
-                  smooth={true}
-                  onClick={() => setIsOpen(false)}
-                >
+                <SC.MenuLink to="about" spy={true} smooth={true} onClick={() => setIsOpen(false)}>
                   Bio
                 </SC.MenuLink>
               </SC.MenuOption>
@@ -101,12 +74,7 @@ export default function Home() {
                 </SC.MenuLink>
               </SC.MenuOption>
               <SC.MenuOption>
-                <SC.MenuLink
-                  to="contact"
-                  spy={true}
-                  smooth={true}
-                  onClick={() => setIsOpen(false)}
-                >
+                <SC.MenuLink to="contact" spy={true} smooth={true} onClick={() => setIsOpen(false)}>
                   Contact
                 </SC.MenuLink>
               </SC.MenuOption>
@@ -132,9 +100,8 @@ export default function Home() {
             <SC.Line />
             <SC.TitleMain>Front-end Developer &amp; UI Designer</SC.TitleMain>
             <SC.Description>
-              Front-end developer focused on creating Web and Mobile
-              applications. I really like different projects that solve real
-              problems.
+              Front-end developer focused on creating Web and Mobile applications. I really like
+              different projects that solve real problems.
             </SC.Description>
             <SC.ContainerButtonsMain>
               <SC.ButtonCV href="/curriculo.pdf" download="resume_Thiago_Leao">
@@ -201,23 +168,18 @@ export default function Home() {
           <SC.TitleAbout>ABOUT ME</SC.TitleAbout>
           <SC.ContainerDescAbout>
             <SC.TextDescAbout>
-              I'm <SC.GreenText>Thiago Leão</SC.GreenText>, I'm{" "}
-              <SC.GreenText>21</SC.GreenText> years old and I live in{" "}
-              <SC.GreenText>São Vicente-SP</SC.GreenText>.
-              <SC.GreenText> Front-end developer</SC.GreenText> and{" "}
-              <SC.GreenText>UI Designer</SC.GreenText>, I'm passionate about
-              interfaces, from their creation to development. I like to learn
-              more and more about the area, challenges that take me out of my
-              comfort zone are the best.
+              I'm <SC.GreenText>Thiago Leão</SC.GreenText>, I'm <SC.GreenText>21</SC.GreenText>{' '}
+              years old and I live in <SC.GreenText>São Vicente-SP</SC.GreenText>.
+              <SC.GreenText> Front-end developer</SC.GreenText> and{' '}
+              <SC.GreenText>UI Designer</SC.GreenText>, I'm passionate about interfaces, from their
+              creation to development. I like to learn more and more about the area, challenges that
+              take me out of my comfort zone are the best.
             </SC.TextDescAbout>
             <SC.Jump />
             <SC.TextDescAbout>
-              I have prototyped and developed{" "}
-              <SC.GreenText>Landing Pages</SC.GreenText>,{" "}
-              <SC.GreenText>Sites</SC.GreenText>,{" "}
-              <SC.GreenText>E-commerces</SC.GreenText>,{" "}
-              <SC.GreenText>E-mails Marketing</SC.GreenText>,{" "}
-              <SC.GreenText>Apps</SC.GreenText> and{" "}
+              I have prototyped and developed <SC.GreenText>Landing Pages</SC.GreenText>,{' '}
+              <SC.GreenText>Sites</SC.GreenText>, <SC.GreenText>E-commerces</SC.GreenText>,{' '}
+              <SC.GreenText>E-mails Marketing</SC.GreenText>, <SC.GreenText>Apps</SC.GreenText> and{' '}
               <SC.GreenText>Programs</SC.GreenText>.
             </SC.TextDescAbout>
           </SC.ContainerDescAbout>
@@ -266,57 +228,33 @@ export default function Home() {
         <SC.ContainerEducationJobs>
           <SC.ContainerColumnsEducationJobs>
             <SC.ColumnEducationJobs>
-              <SC.TitleColumnEducationJobs>
-                Education
-              </SC.TitleColumnEducationJobs>
+              <SC.TitleColumnEducationJobs>Education</SC.TitleColumnEducationJobs>
               <SC.BoxInfoEducationJobs>
-                <SC.DateEducationJobs>
-                  January 2020 - December 2023
-                </SC.DateEducationJobs>
-                <SC.TitleEducationJobs>
-                  Information Systems
-                </SC.TitleEducationJobs>
-                <SC.InstitutionEducationJobs>
-                  Santa Cecilia University
-                </SC.InstitutionEducationJobs>
+                <SC.DateEducationJobs>January 2020 - December 2023</SC.DateEducationJobs>
+                <SC.TitleEducationJobs>Information Systems</SC.TitleEducationJobs>
+                <SC.InstitutionEducationJobs>Santa Cecilia University</SC.InstitutionEducationJobs>
               </SC.BoxInfoEducationJobs>
               <SC.BoxInfoEducationJobs>
-                <SC.DateEducationJobs>
-                  August 2018 - December 2019
-                </SC.DateEducationJobs>
-                <SC.TitleEducationJobs>
-                  Systems Development
-                </SC.TitleEducationJobs>
-                <SC.InstitutionEducationJobs>
-                  ETEC Doctor Ruth Cardoso
-                </SC.InstitutionEducationJobs>
+                <SC.DateEducationJobs>August 2018 - December 2019</SC.DateEducationJobs>
+                <SC.TitleEducationJobs>Systems Development</SC.TitleEducationJobs>
+                <SC.InstitutionEducationJobs>ETEC Doctor Ruth Cardoso</SC.InstitutionEducationJobs>
               </SC.BoxInfoEducationJobs>
             </SC.ColumnEducationJobs>
 
             <SC.ColumnEducationJobs>
               <SC.TitleColumnEducationJobs>Jobs</SC.TitleColumnEducationJobs>
               <SC.BoxInfoEducationJobs>
-                <SC.DateEducationJobs>
-                  Octuber 2021 - January 2022
-                </SC.DateEducationJobs>
-                <SC.TitleEducationJobs>
-                  Front-end Developer
-                </SC.TitleEducationJobs>
+                <SC.DateEducationJobs>Octuber 2021 - January 2022</SC.DateEducationJobs>
+                <SC.TitleEducationJobs>Front-end Developer</SC.TitleEducationJobs>
                 <SC.InstitutionEducationJobs>
                   Criando Valor - Tecnologia & Inovação
                 </SC.InstitutionEducationJobs>
               </SC.BoxInfoEducationJobs>
 
               <SC.BoxInfoEducationJobs>
-                <SC.DateEducationJobs>
-                  September 2020 - August 2021
-                </SC.DateEducationJobs>
-                <SC.TitleEducationJobs>
-                  Front-end Developer
-                </SC.TitleEducationJobs>
-                <SC.InstitutionEducationJobs>
-                  Agência Mandarin
-                </SC.InstitutionEducationJobs>
+                <SC.DateEducationJobs>September 2020 - August 2021</SC.DateEducationJobs>
+                <SC.TitleEducationJobs>Front-end Developer</SC.TitleEducationJobs>
+                <SC.InstitutionEducationJobs>Agência Mandarin</SC.InstitutionEducationJobs>
               </SC.BoxInfoEducationJobs>
             </SC.ColumnEducationJobs>
           </SC.ContainerColumnsEducationJobs>
@@ -336,9 +274,9 @@ export default function Home() {
                 <CardProjects
                   key={index}
                   id={project.id}
-                  image={project.image}
-                  Title={project.title}
-                  Type={project.type}
+                  image={project.thumbnailUrl}
+                  Title={project.name}
+                  Type="ui"
                 />
               );
             })}
@@ -360,10 +298,7 @@ export default function Home() {
                 <SC.ContainerContactInfoItem>
                   <HiOutlineMail color="#FFFFFF" size="1.8em" />
                   <SC.TextContactInfo>
-                    <SC.LinkAction
-                      href="mailto:thiagoleao.dev@gmail.com"
-                      target="_blank"
-                    >
+                    <SC.LinkAction href="mailto:thiagoleao.dev@gmail.com" target="_blank">
                       thiagoleao.dev@gmail.com
                     </SC.LinkAction>
                   </SC.TextContactInfo>
