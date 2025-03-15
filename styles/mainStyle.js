@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import Image from "next/image";
-import { Link } from "react-scroll";
+import styled from 'styled-components';
+import Image from 'next/image';
+import { Link } from 'react-scroll';
 
 export const Main = styled.div`
   position: relative;
@@ -22,7 +22,7 @@ export const ContainerMenu = styled.div`
   justify-content: center;
 
   @media only screen and (max-width: 768px) {
-    height: ${(props) => (props.menuOpen ? "auto" : "80px")};
+    height: ${(props) => (props.menuOpen ? 'auto' : '80px')};
     background-color: ${({ theme }) => theme.colors.BgPrimary};
   }
 `;
@@ -90,7 +90,7 @@ export const MenuLink = styled(Link)`
     color: ${({ theme }) => theme.colors.Primary};
 
     &::after {
-      content: "";
+      content: '';
       display: inline-block;
       position: relative;
       width: 6px;
@@ -157,11 +157,7 @@ export const SectionHero = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    90deg,
-    ${({ theme }) => theme.colors.BgPrimary} 80%,
-    ${({ theme }) => theme.colors.BgSecondary} 20%
-  );
+  background: linear-gradient(90deg, ${({ theme }) => theme.colors.BgPrimary} 80%, ${({ theme }) => theme.colors.BgSecondary} 20%);
 `;
 
 export const GroupLeftRight = styled.div`
@@ -232,7 +228,7 @@ export const TitleMain = styled.h1`
   font-size: clamp(28px, 2.4vw, 48px);
 
   &:after {
-    content: "Front-end Developer & UI Designer";
+    content: 'Front-end Developer & UI Designer';
     position: absolute;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: ${({ theme }) => theme.colors.TextPrimary};
@@ -368,7 +364,6 @@ export const CircleSocial = styled.a`
     padding: 12px;
   }
 
-
   @media screen and (max-width: 768px) {
     padding: 10px;
   }
@@ -415,8 +410,7 @@ export const Circle = styled.div`
   margin-left: -130px;
   border: 6px solid ${({ theme }) => theme.colors.Primary};
   border-radius: 50%;
-  box-shadow: 0px 0px 50px 9px rgba(19, 255, 0, 0.7),
-    rgba(19, 255, 0, 0.7) 0px 0px 50px 9px inset;
+  box-shadow: 0px 0px 50px 9px rgba(19, 255, 0, 0.7), rgba(19, 255, 0, 0.7) 0px 0px 50px 9px inset;
 `;
 
 // ----------------------- ABOUT ME -----------------------
@@ -452,7 +446,7 @@ export const TitleAbout = styled.h2`
   align-items: center;
 
   &::after {
-    content: "";
+    content: '';
     border-bottom: 4px solid ${({ theme }) => theme.colors.Primary};
     width: 45px;
     border-radius: 30px;
@@ -749,7 +743,6 @@ export const ContainerContactInfo = styled.div`
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
-
 `;
 
 export const GroupContactInfo = styled.div`
@@ -773,7 +766,7 @@ export const TitleContactInfo = styled.p`
 
   &:before {
     position: absolute;
-    content: "";
+    content: '';
     right: 0;
     width: 48%;
     text-align: right;
@@ -805,7 +798,7 @@ export const TextContactInfo = styled.p`
   margin-left: 24px;
   font-size: 20px;
   font-weight: 500;
-  
+
   @media only screen and (max-width: 768px) {
     font-size: 16px;
   }
@@ -823,7 +816,7 @@ export const LinkAction = styled.a`
 
 export const LineContact = styled.span`
   position: absolute;
-  content: "";
+  content: '';
   left: 0;
   width: 48%;
   height: 3px;
@@ -896,7 +889,7 @@ export const LabelContact = styled.label`
 export const InputContact = styled.input`
   box-sizing: border-box;
   width: 90%;
-  height: ${(props) => props.height || "40px"};
+  height: ${(props) => props.height || '40px'};
   border-radius: 8px;
   padding: 0 16px;
   font-size: 16px;
@@ -913,7 +906,7 @@ export const InputContact = styled.input`
 export const InputContactText = styled.textarea`
   box-sizing: border-box;
   width: 100%;
-  height: ${(props) => props.height || "40px"};
+  height: ${(props) => props.height || '40px'};
   border-radius: 8px;
   padding: 16px;
   font-size: 16px;
